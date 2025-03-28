@@ -1,3 +1,4 @@
+using NodeCanvas.Tasks.Actions;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,8 @@ public class Health : MonoBehaviour
     public float health;
     public float maxHealth;
     public GameObject healthDisplay;
+   // public GameObject healthBackground;
+  //  public GameObject camera
   
     void Start()
     {
@@ -16,6 +19,8 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //healthDisplay.transform.LookAt(Camera.main.transform);
+        //healthBackground.transform.LookAt(Camera.main.transform);
         float healthRatio;
         healthRatio = health / maxHealth;
         healthDisplay.transform.localScale = new Vector3 (healthRatio,1,1);
