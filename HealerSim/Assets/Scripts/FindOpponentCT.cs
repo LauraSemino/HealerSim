@@ -41,14 +41,19 @@ namespace NodeCanvas.Tasks.Conditions {
 					//Debug.Log(i);
                     if ((agent.transform.position - enemy.transform.position).magnitude < closest)
                     {
-                        closest = (agent.transform.position - enemy.transform.position).magnitude;
-                        bestTarget = enemy.gameObject;
+                        
+						if (enemy.gameObject != agent.gameObject)
+						{
+							closest = (agent.transform.position - enemy.transform.position).magnitude;
+							bestTarget = enemy.gameObject;
+						}
+                        
                         //return true;
 
                     }
 
                 }
-			if (bestTarget != null)
+			if (bestTarget != null )
 			{
                 target.value = bestTarget;
                 return true;
