@@ -37,6 +37,14 @@ public class Health : MonoBehaviour
         {
             healthDisplay.GetComponentInChildren<Renderer>().material.color = Color.red;
         }
-        
+        if(health <= 0)
+        {
+            StartCoroutine(Die());
+        }
+    }
+    IEnumerator Die()
+    {
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
     }
 }

@@ -10,7 +10,7 @@ namespace NodeCanvas.Tasks.Actions {
 
 	public class AttackAT : ActionTask {
 		public float damage;
-		float atkDur;
+		public BBParameter<float> atkDur;
         public float totalAtkTime;
         public NavMeshAgent nma;
         public BBParameter<GameObject> target;
@@ -18,7 +18,8 @@ namespace NodeCanvas.Tasks.Actions {
         //Use for initialization. This is called only once in the lifetime of the task.
         //Return null if init was successfull. Return an error string otherwise
         protected override string OnInit() {
-			return null;
+            atkDur.value = totalAtkTime;
+            return null;
 		}
 
         //This is called once each time the task is enabled.
@@ -27,7 +28,7 @@ namespace NodeCanvas.Tasks.Actions {
 		protected override void OnExecute() {
 
             //nma.SetDestination(agent.transform.position);
-            //atkDur = totalAtkTime;
+           
             velocity.value = Vector3.zero;
             //EndAction(true);
         }
@@ -36,13 +37,14 @@ namespace NodeCanvas.Tasks.Actions {
         //Called once per frame while the action is active.
         protected override void OnUpdate() {
 
-            atkDur -= Time.deltaTime;
-            if (atkDur <= 0)
+            atkDur.value -= Time.deltaTime;
+            if (atkDur.value <= 0)
             {
                 target.value.GetComponent<Health>().health -= damage;
-                atkDur = totalAtkTime;
-                EndAction(true);
+                atkDur.value = totalAtkTime;
+                //EndAction(true);
             }
+            EndAction(true);
         }
 
 		//Called when the task is disabled.
