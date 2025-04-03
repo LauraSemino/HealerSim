@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Health : MonoBehaviour
+public class HealerHealth : MonoBehaviour
 {
     public float health;
     public float maxHealth;
     public GameObject healthDisplay;
-   // public GameObject healthBackground;
-  //  public GameObject camera
-  
+    // public GameObject healthBackground;
+    //  public GameObject camera
+
     void Start()
     {
         health = maxHealth;
@@ -24,19 +24,19 @@ public class Health : MonoBehaviour
         //healthBackground.transform.LookAt(Camera.main.transform);
         float healthRatio;
         healthRatio = health / maxHealth;
-        healthDisplay.transform.localScale = new Vector3 (healthRatio,1,1);
-        if(health ==  maxHealth)
+        healthDisplay.transform.localScale = new Vector3(healthRatio, 1, 1);
+      
+        if (health == maxHealth)
         {
-            healthDisplay.GetComponentInChildren<Renderer>().material.color = Color.green;
+            healthDisplay.GetComponent<Image>().color = Color.green;
         }
         else if (health < maxHealth && health > maxHealth / 3)
         {
-            healthDisplay.GetComponentInChildren<Renderer>().material.color = Color.yellow;
+            healthDisplay.GetComponent<Image>().color = Color.yellow;
         }
-        else if (health <= maxHealth /3)
+        else if (health <= maxHealth / 3)
         {
-            healthDisplay.GetComponentInChildren<Renderer>().material.color = Color.red;
+            healthDisplay.GetComponent<Image>().color = Color.red;
         }
-        
     }
 }
