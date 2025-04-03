@@ -2897,7 +2897,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1637255594}
   - component: {fileID: 1637255595}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Healer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
