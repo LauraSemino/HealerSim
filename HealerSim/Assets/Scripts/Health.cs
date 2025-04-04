@@ -25,6 +25,10 @@ public class Health : MonoBehaviour
         float healthRatio;
         healthRatio = health / maxHealth;
         healthDisplay.transform.localScale = new Vector3 (healthRatio,1,1);
+        if(health > maxHealth)
+        {
+            health = maxHealth;
+        }
         if(health ==  maxHealth)
         {
             healthDisplay.GetComponentInChildren<Renderer>().material.color = Color.green;

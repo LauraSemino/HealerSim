@@ -54,7 +54,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  maxHealth: 15
+  maxHealth: 10
   healthDisplay: {fileID: 5388493283941797931}
 --- !u!114 &7828295481441847264
 MonoBehaviour:
@@ -79,7 +79,7 @@ MonoBehaviour:
     _version: 3.31
     _category: 
     _comments: 
-    _translation: {x: 22, y: -172}
+    _translation: {x: -124, y: -82}
     _zoomFactor: 0.999841
   _firstActivation: 0
   _enableAction: 0
