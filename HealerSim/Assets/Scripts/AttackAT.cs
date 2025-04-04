@@ -15,6 +15,7 @@ namespace NodeCanvas.Tasks.Actions {
         public NavMeshAgent nma;
         public BBParameter<GameObject> target;
         public BBParameter<Vector3> velocity;
+        public bool stopToAtk;
         //Use for initialization. This is called only once in the lifetime of the task.
         //Return null if init was successfull. Return an error string otherwise
         protected override string OnInit() {
@@ -28,8 +29,11 @@ namespace NodeCanvas.Tasks.Actions {
 		protected override void OnExecute() {
 
             //nma.SetDestination(agent.transform.position);
-           
-            velocity.value = Vector3.zero;
+            if(stopToAtk == true)
+            {
+                velocity.value = Vector3.zero;
+            }
+            
             //EndAction(true);
         }
 

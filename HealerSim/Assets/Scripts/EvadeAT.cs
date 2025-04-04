@@ -23,12 +23,15 @@ namespace NodeCanvas.Tasks.Actions {
         //EndAction can be called from anywhere.
 		protected override void OnExecute() {
             float distanceToTarget = Vector3.Distance(agent.transform.position, target.value.gameObject.transform.position);
+            Vector3 direction = target.value.transform.position - agent.transform.position;
             if (distanceToTarget < atkRange)
             {
+                direction = new Vector3(direction.x, 0, direction.z);
+                charAccel.value -= direction.normalized * steerAccel * Time.deltaTime;
                 EndAction(true);
                 return;
             }
-            Vector3 direction = target.value.transform.position - agent.transform.position;
+            
             direction = new Vector3(direction.x, 0, direction.z);        
             charAccel.value += direction.normalized * steerAccel * Time.deltaTime;
 
