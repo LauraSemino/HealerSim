@@ -10,11 +10,22 @@ namespace NodeCanvas.Tasks.Actions {
 	public class CooldownAT : ActionTask {
 		public BBParameter<float> basicCooldown;
 		public BBParameter<float> ability1Cooldown;
-		public TextMeshProUGUI A1cooldownCount;
+        public BBParameter<float> ability2Cooldown;
+		public BBParameter<float> A2Timer;
+
+        public TextMeshProUGUI A1cooldownCount;
 		public GameObject A1cooldownShade;
-		//Use for initialization. This is called only once in the lifetime of the task.
-		//Return null if init was successfull. Return an error string otherwise
-		protected override string OnInit() {
+        public TextMeshProUGUI A2cooldownCount;
+        public GameObject A2cooldownShade;
+
+        public TextMeshProUGUI A2activeCount;
+        public GameObject A2activeShade;
+
+		public GameObject healAura;
+		
+        //Use for initialization. This is called only once in the lifetime of the task.
+        //Return null if init was successfull. Return an error string otherwise
+        protected override string OnInit() {
 			return null;
 		}
 
@@ -42,6 +53,31 @@ namespace NodeCanvas.Tasks.Actions {
 			{
 				A1cooldownCount.gameObject.SetActive(false);
                 A1cooldownShade.SetActive(false);
+            }
+			if (A2Timer.value > 0)
+			{
+				healAura.SetActive(true);
+                A2activeShade.SetActive(true);
+                A2activeCount.gameObject.SetActive(true);
+                A2activeCount.text = Mathf.Ceil(A2Timer.value).ToString();
+            }
+			else
+			{
+                healAura.SetActive(false);
+                A2activeCount.gameObject.SetActive(false);
+                A2activeShade.SetActive(false);
+            }
+            if (ability2Cooldown.value >= 0)
+			{
+				A2cooldownShade.SetActive(true);
+                A2cooldownCount.gameObject.SetActive(true);
+                A2cooldownCount.text = Mathf.Ceil(ability2Cooldown.value).ToString();
+                ability2Cooldown.value -= Time.deltaTime;
+            }
+			else
+			{
+                A2cooldownCount.gameObject.SetActive(false);
+                A2cooldownShade.SetActive(false);
             }
 
         }

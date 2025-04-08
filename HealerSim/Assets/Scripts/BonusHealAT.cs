@@ -1,53 +1,45 @@
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
-
 
 namespace NodeCanvas.Tasks.Actions {
 
-	public class HealAT : ActionTask {
+	public class BonusHealAT : ActionTask {
 
-		public float healVal;
-		public BBParameter<GameObject> target;
-		public BBParameter<float> bonusHeal;
-        Camera cam;
-		public float fireRate;
+		public BBParameter<float> activeTime;
+        public BBParameter<float> bonusHeal;
 		public BBParameter<float> cooldown;
-        //public LayerMask opponent;
+        public float fireRate;
         //Use for initialization. This is called only once in the lifetime of the task.
         //Return null if init was successfull. Return an error string otherwise
         protected override string OnInit() {
-           
-            return null;
+			return null;
 		}
 
 		//This is called once each time the task is enabled.
 		//Call EndAction() to mark the action as finished, either in success or failure.
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
-		 
-			if(target.value.GetComponent<Health>() != null && cooldown.value <= 0)
-			{
-                
-                target.value.GetComponent<Health>().health += healVal * bonusHeal.value;
-				cooldown.value = fireRate;
-            }
-            if (target.value.GetComponent<HealerHealth>() != null && cooldown.value <= 0)
-
-            {
-                target.value.GetComponent<HealerHealth>().health += healVal/2 * bonusHeal.value;
-                cooldown.value = fireRate;
-            }
-
-
-            EndAction(true);
-		}
+            activeTime.value = 6;
+            //EndAction(true);
+        }
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
-            
-            // Debug.Log("Mouse Pressed");
+
+			activeTime.value -= Time.deltaTime;
+			if(activeTime.value >= 0)
+			{
+                bonusHeal.value = 1.5f;
+            }
+            else
+			{
+                cooldown.value = fireRate;
+                bonusHeal.value = 1;
+				EndAction(true);
+			}
+			
 
         }
 
