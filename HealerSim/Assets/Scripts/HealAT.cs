@@ -33,8 +33,15 @@ namespace NodeCanvas.Tasks.Actions {
                 target.value.GetComponent<Health>().health += healVal;
 				cooldown.value = fireRate;
             }
-			
-			EndAction(true);
+            if (target.value.GetComponent<HealerHealth>() != null && cooldown.value <= 0)
+
+            {
+                target.value.GetComponent<HealerHealth>().health += healVal/2;
+                cooldown.value = fireRate;
+            }
+
+
+            EndAction(true);
 		}
 
 		//Called once per frame while the action is active.
