@@ -1,6 +1,7 @@
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 namespace NodeCanvas.Tasks.Actions {
@@ -9,6 +10,7 @@ namespace NodeCanvas.Tasks.Actions {
 
 		public float healVal;
 		public BBParameter<GameObject> target;
+       
         Camera cam;
 		public float fireRate;
 		public BBParameter<float> cooldown;
@@ -27,6 +29,7 @@ namespace NodeCanvas.Tasks.Actions {
 		 
 			if(target.value.GetComponent<Health>() != null && cooldown.value <= 0)
 			{
+                
                 target.value.GetComponent<Health>().health += healVal;
 				cooldown.value = fireRate;
             }
@@ -36,8 +39,9 @@ namespace NodeCanvas.Tasks.Actions {
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
-           // Debug.Log("Mouse Pressed");
-           
+            
+            // Debug.Log("Mouse Pressed");
+
         }
 
 		//Called when the task is disabled.
