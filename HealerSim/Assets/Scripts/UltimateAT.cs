@@ -1,14 +1,24 @@
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
-
+using System.ComponentModel;
+using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 namespace NodeCanvas.Tasks.Actions {
 
 	public class UltimateAT : ActionTask {
+        public BBParameter<float> ultCharge;
+		public float ultActiveTimer;
+		public GameObject ultAura;
+		public float healVal;
+		public Collider[] friends;
+        public LayerMask fren;
 
-		//Use for initialization. This is called only once in the lifetime of the task.
-		//Return null if init was successfull. Return an error string otherwise
-		protected override string OnInit() {
+		public Material mat1;
+		public Material mat2;
+        //Use for initialization. This is called only once in the lifetime of the task.
+        //Return null if init was successfull. Return an error string otherwise
+        protected override string OnInit() {
 			return null;
 		}
 
@@ -16,13 +26,64 @@ namespace NodeCanvas.Tasks.Actions {
 		//Call EndAction() to mark the action as finished, either in success or failure.
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
-			EndAction(true);
-		}
+            if (ultCharge.value >= 99)
+            {
+                ultAura.gameObject.SetActive(true);
+            }
+                
+            //EndAction(true);
+        }
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
+
+			if(ultCharge.value >= 99)
+			{
+                if (ultActiveTimer > 0)
+                {
+                    ultActiveTimer -= Time.deltaTime;
+                    friends = Physics.OverlapSphere(agent.transform.position, 150, fren);
+                    foreach (Collider friend in friends)
+                    {
+                        if (friend.gameObject.GetComponent<Health>() != null)
+                        {
+                            friend.gameObject.GetComponent<Health>().health += healVal * Time.deltaTime;
+                        }
+                        if (friend.gameObject.GetComponent<HealerHealth>() != null)
+                        {
+                            friend.gameObject.GetComponent<HealerHealth>().health += healVal * Time.deltaTime;
+                        }
+
+
+
+                    }
+                    if (Mathf.RoundToInt(ultActiveTimer % 2) == 0)
+                    {
+                        ultAura.gameObject.GetComponent<MeshRenderer>().material = mat1;
+                    }
+                    else if (Mathf.RoundToInt(ultActiveTimer) % 2 == 1)
+                    {
+                        ultAura.gameObject.GetComponent<MeshRenderer>().material = mat2;
+                    }
+
+
+                }
+                else
+                {
+                    ultAura.gameObject.SetActive(false);
+                    ultCharge.value = 0;
+                    EndAction(true);
+                }
+            }
+			else
+            {
+                EndAction(true);
+            }
 			
-		}
+           
+			
+            
+        }
 
 		//Called when the task is disabled.
 		protected override void OnStop() {

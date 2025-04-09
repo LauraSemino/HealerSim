@@ -86,7 +86,7 @@ namespace NodeCanvas.Tasks.Actions {
             }
 			if(ultCharge.value >= 99)
 			{
-				ultCharge = 100;
+				//ultCharge.value = 100;
 				ultAmount.gameObject.SetActive(false);
                 inactiveUlt.SetActive(false);
 				activeUlt.SetActive(true);
