@@ -61,8 +61,11 @@ public class RoundManager : MonoBehaviour
 
         if (enemies.Count == 0)
         {
+            if(roundCount < 10)
+            {
+                roundCount++;
+            }
             
-            roundCount++;
             //respawns allies randomly
             if (roundCount > 0 && roundCount < 3)
             {
@@ -179,15 +182,64 @@ public class RoundManager : MonoBehaviour
                 enemies[4].transform.position = eSpawns[4].position;
                 break;
             case 7:
-                // adds more friends if some have died
-              
-
+                enemies.Add(Instantiate(unitPrefabs[1]));
+                enemies[0].GetComponent<Health>().maxHealth = 12;
+                enemies[0].transform.position = eSpawns[0].position;
+                enemies.Add(Instantiate(unitPrefabs[1]));
+                enemies[1].GetComponent<Health>().maxHealth = 12;
+                enemies[1].transform.position = eSpawns[1].position;
+                enemies.Add(Instantiate(unitPrefabs[2]));
+                enemies[2].GetComponent<Health>().maxHealth = 6;
+                enemies[2].transform.position = eSpawns[2].position;
+                
                 break;
             case 8:
+                enemies.Add(Instantiate(unitPrefabs[1]));
+                enemies[0].GetComponent<Health>().maxHealth = 15;
+                enemies[0].transform.position = eSpawns[0].position;
+                enemies.Add(Instantiate(unitPrefabs[1]));
+                enemies[0].GetComponent<Health>().maxHealth = 15;
+                enemies[0].transform.position = eSpawns[1].position;
+                enemies.Add(Instantiate(unitPrefabs[0]));
+                enemies[1].GetComponent<Health>().maxHealth = 8;
+                enemies[1].transform.position = eSpawns[2].position;
+                enemies.Add(Instantiate(unitPrefabs[0]));
+                enemies[1].GetComponent<Health>().maxHealth = 8;
+                enemies[1].transform.position = eSpawns[3].position;
                 break;
             case 9:
+                enemies.Add(Instantiate(unitPrefabs[2]));
+                enemies[0].GetComponent<Health>().maxHealth = 6;
+                enemies[0].transform.position = eSpawns[0].position;
+                enemies.Add(Instantiate(unitPrefabs[2]));
+                enemies[1].GetComponent<Health>().maxHealth = 6;
+                enemies[1].transform.position = eSpawns[1].position;
+                enemies.Add(Instantiate(unitPrefabs[2]));
+                enemies[2].GetComponent<Health>().maxHealth = 6;
+                enemies[2].transform.position = eSpawns[2].position;
+                enemies.Add(Instantiate(unitPrefabs[2]));
+                enemies[3].GetComponent<Health>().maxHealth = 6;
+                enemies[3].transform.position = eSpawns[3].position;
+                enemies.Add(Instantiate(unitPrefabs[2]));
+                enemies[4].GetComponent<Health>().maxHealth = 6;
+                enemies[4].transform.position = eSpawns[4].position;
                 break;
             case 10:
+                enemies.Add(Instantiate(unitPrefabs[1]));
+                enemies[0].GetComponent<Health>().maxHealth = 18;
+                enemies[0].transform.position = eSpawns[0].position;
+                enemies.Add(Instantiate(unitPrefabs[0]));
+                enemies[1].GetComponent<Health>().maxHealth = 10;
+                enemies[1].transform.position = eSpawns[1].position;
+                enemies.Add(Instantiate(unitPrefabs[0]));
+                enemies[2].GetComponent<Health>().maxHealth = 10;
+                enemies[2].transform.position = eSpawns[2].position;
+                enemies.Add(Instantiate(unitPrefabs[2]));
+                enemies[3].GetComponent<Health>().maxHealth = 6;
+                enemies[3].transform.position = eSpawns[3].position;
+                enemies.Add(Instantiate(unitPrefabs[2]));
+                enemies[4].GetComponent<Health>().maxHealth = 6;
+                enemies[4].transform.position = eSpawns[4].position;
                 break;
         }
     }
