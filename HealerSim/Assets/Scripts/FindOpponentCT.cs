@@ -33,40 +33,47 @@ namespace NodeCanvas.Tasks.Conditions {
 		protected override bool OnCheck()
 		{
 			Collider[] enemies = Physics.OverlapSphere(agent.transform.position, radius, opponent);
-			if (enemies.Count() == 0)
+			if (enemies != null)
 			{
-				target.value = null;
-			}
-			float closest = Mathf.Infinity;
-			GameObject bestTarget = null;
-			
+                float closest = Mathf.Infinity;
+                GameObject bestTarget = null;
+
                 foreach (Collider enemy in enemies)
                 {
-					//Debug.Log(i);
+                    //Debug.Log(i);
                     if ((agent.transform.position - enemy.transform.position).magnitude < closest)
                     {
-                        
-						if (enemy.gameObject != agent.gameObject)
-						{
-							closest = (agent.transform.position - enemy.transform.position).magnitude;
-							bestTarget = enemy.gameObject;
-						}
-                        
+
+                        if (enemy.gameObject != agent.gameObject)
+                        {
+                            closest = (agent.transform.position - enemy.transform.position).magnitude;
+                            bestTarget = enemy.gameObject;
+                        }
+
                         //return true;
 
                     }
 
                 }
-			if (bestTarget != null )
-			{
-                target.value = bestTarget;
-                return true;
-            }
-				
 
-            
+
+
+                if (bestTarget != null)
+                {
+                    target.value = bestTarget;
+                    return true;
+                }
+            }
+			else
+			{
+				target.value = agent.gameObject;
+			}
 			
-			return false;
+
+           
+
+
+            return false;
 			
 
 			//Collider[] collision.add);

@@ -58,6 +58,7 @@ namespace NodeCanvas.Tasks.Actions {
                 atkDur.value = totalAtkTime;
                 //EndAction(true);
             }
+
             EndAction(true);
         }
 

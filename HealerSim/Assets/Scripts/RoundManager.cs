@@ -28,17 +28,11 @@ public class RoundManager : MonoBehaviour
         {
             spawnUnits();
         }
-        if(enemies.Count == 0)
-        {
-            roundCount++;
-            foreach (GameObject friend in friends)
-            {
-                friend.transform.position = fSpawns[friends.IndexOf(friend)].position;
-            }
-            spawnUnits();
-        }
+        
+        
+
         List<GameObject> deadGuys = new List<GameObject>();
-        foreach(GameObject enemy in enemies)
+        foreach (GameObject enemy in enemies)
         {
             if (enemy.GetComponent<Health>().health <= 0)
             {
@@ -46,10 +40,67 @@ public class RoundManager : MonoBehaviour
                 //enemies.Remove(enemy);
             }
         }
-        foreach(GameObject enemy in deadGuys)
+        foreach (GameObject enemy in deadGuys)
         {
             enemies.Remove(enemy);
         }
+
+        List<GameObject> deadfren = new List<GameObject>();
+        foreach (GameObject friend in friends)
+        {
+            if (friend.GetComponent<Health>().health <= 0)
+            {
+                deadfren.Add(friend);
+                //enemies.Remove(enemy);
+            }
+        }
+        foreach(GameObject friend in deadfren)
+        {
+            friends.Remove(friend);
+        }
+
+        if (enemies.Count == 0)
+        {
+            
+            roundCount++;
+            //respawns allies randomly
+            if (roundCount > 0 && roundCount < 3)
+            {
+                if(friends.Count < 1)
+                {
+                    friends.Add(Instantiate(unitPrefabs[3]));
+                    friends[friends.Count - 1].transform.position = fSpawns[friends.Count - 1].position;
+                }
+            }
+            else if (roundCount >= 4 && roundCount < 5)
+            {
+                
+                if (friends.Count < 2)
+                {
+                    friends.Add(Instantiate(unitPrefabs[Random.Range(3,5)]));
+                    friends[friends.Count - 1].transform.position = fSpawns[friends.Count - 1].position;
+                 
+                }
+            }
+            else if (roundCount >= 6)
+            {
+                if (friends.Count < 3)
+                {
+                 
+                    friends.Add(Instantiate(unitPrefabs[Random.Range(3, 6)]));
+                    friends[friends.Count - 1].transform.position = fSpawns[friends.Count - 1].position;
+                   
+                 
+                }
+            }
+            foreach (GameObject friend in friends)
+            {
+                friend.transform.position = fSpawns[friends.IndexOf(friend)].position;
+            }
+
+            spawnUnits();
+        }
+
 
     }
 
@@ -65,18 +116,72 @@ public class RoundManager : MonoBehaviour
                 break;
             case 2:
                 enemies.Add(Instantiate(unitPrefabs[0]));
-                enemies[0].GetComponent<Health>().maxHealth = 8;
-                enemies[0].transform.position = eSpawns[0].position;
+                enemies[0].GetComponent<Health>().maxHealth = 4;
+                enemies[0].transform.position = eSpawns[2].position;
+                enemies.Add(Instantiate(unitPrefabs[0]));
+                enemies[1].GetComponent<Health>().maxHealth = 4;
+                enemies[1].transform.position = eSpawns[1].position;
                 break;
-            case 3:
+            case 3:              
+                //tank added to your team
+                friends.Add(Instantiate(unitPrefabs[4]));
+                friends[friends.Count-1].transform.position = fSpawns[friends.Count-1].position;
+
+                enemies.Add(Instantiate(unitPrefabs[1]));
+                enemies[0].GetComponent<Health>().maxHealth = 12;
+                enemies[0].transform.position = eSpawns[0].position;
+                enemies.Add(Instantiate(unitPrefabs[0]));
+                enemies[1].GetComponent<Health>().maxHealth = 4;
+                enemies[1].transform.position = eSpawns[1].position;
+                enemies.Add(Instantiate(unitPrefabs[0]));
+                enemies[1].GetComponent<Health>().maxHealth = 4;
+                enemies[1].transform.position = eSpawns[2].position;
                 break;
             case 4:
+                enemies.Add(Instantiate(unitPrefabs[1]));
+                enemies[0].GetComponent<Health>().maxHealth = 12;
+                enemies[0].transform.position = eSpawns[0].position;
+                enemies.Add(Instantiate(unitPrefabs[2]));
+                enemies[1].GetComponent<Health>().maxHealth = 5;
+                enemies[1].transform.position = eSpawns[1].position;
+                
                 break;
             case 5:
+                //Archer added to your team
+                friends.Add(Instantiate(unitPrefabs[5]));
+                friends[friends.Count - 1].transform.position = fSpawns[friends.Count-1].position;
+
+                enemies.Add(Instantiate(unitPrefabs[1]));
+                enemies[0].GetComponent<Health>().maxHealth = 12;
+                enemies[0].transform.position = eSpawns[0].position;
+                enemies.Add(Instantiate(unitPrefabs[2]));
+                enemies[1].GetComponent<Health>().maxHealth = 6;
+                enemies[1].transform.position = eSpawns[1].position;
+                enemies.Add(Instantiate(unitPrefabs[0]));
+                enemies[2].GetComponent<Health>().maxHealth = 6;
+                enemies[2].transform.position = eSpawns[2].position;
                 break;
             case 6:
+                enemies.Add(Instantiate(unitPrefabs[0]));
+                enemies[0].GetComponent<Health>().maxHealth = 4;
+                enemies[0].transform.position = eSpawns[0].position;
+                enemies.Add(Instantiate(unitPrefabs[0]));
+                enemies[1].GetComponent<Health>().maxHealth = 4;
+                enemies[1].transform.position = eSpawns[1].position;
+                enemies.Add(Instantiate(unitPrefabs[0]));
+                enemies[2].GetComponent<Health>().maxHealth = 4;
+                enemies[2].transform.position = eSpawns[2].position;
+                enemies.Add(Instantiate(unitPrefabs[0]));
+                enemies[3].GetComponent<Health>().maxHealth = 4;
+                enemies[3].transform.position = eSpawns[3].position;
+                enemies.Add(Instantiate(unitPrefabs[0]));
+                enemies[4].GetComponent<Health>().maxHealth = 4;
+                enemies[4].transform.position = eSpawns[4].position;
                 break;
             case 7:
+                // adds more friends if some have died
+              
+
                 break;
             case 8:
                 break;

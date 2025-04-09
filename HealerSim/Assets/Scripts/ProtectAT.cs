@@ -23,9 +23,18 @@ namespace NodeCanvas.Tasks.Actions {
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
             float distanceToTarget = Vector3.Distance(agent.transform.position, target.value.gameObject.transform.position);
-            float distanceToAlly = Vector3.Distance(agent.transform.position, ally.value.gameObject.transform.position);
+            float distanceToAlly;
+            if (ally != null)
+            {
+                distanceToAlly = Vector3.Distance(agent.transform.position, ally.value.gameObject.transform.position);
+            }
+            else
+            {
+                distanceToAlly = Vector3.Distance(agent.transform.position, agent.transform.position);
+            }
+            
             //Debug.Log(distanceToAlly);
-           // Debug.Log(distanceToTarget);
+            // Debug.Log(distanceToTarget);
             Vector3 direction;
             if (distanceToTarget < atkRange)
             {
@@ -44,7 +53,7 @@ namespace NodeCanvas.Tasks.Actions {
             direction = new Vector3(direction.x, 0, direction.z);
             charAccel.value += direction.normalized * steerAccel * Time.deltaTime;
             EndAction(true);
-           
+            
 		}
 
 		//Called once per frame while the action is active.

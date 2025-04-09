@@ -15,7 +15,10 @@ namespace NodeCanvas.Tasks.Actions {
 		public NavMeshAgent nma;
 		public BBParameter<Vector3> charAccel;
 		public BBParameter<Vector3> velocity;
-		public float maxSpeed;
+        public BBParameter<float> atkDur;
+
+
+        public float maxSpeed;
 		//public float steerAccel;
 		public float atkRange;
         //Use for initialization. This is called only once in the lifetime of the task.
@@ -35,7 +38,14 @@ namespace NodeCanvas.Tasks.Actions {
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
-			velocity.value += charAccel.value;
+			if(atkDur.value > 0)
+			{
+                atkDur.value -= Time.deltaTime;
+            }
+            
+
+
+            velocity.value += charAccel.value;
 			float groundSpeed = Mathf.Sqrt(velocity.value.x * velocity.value.x + velocity.value.z * velocity.value.z);
 			if(maxSpeed < groundSpeed)
 			{
