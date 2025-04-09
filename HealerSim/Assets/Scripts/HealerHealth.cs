@@ -50,7 +50,9 @@ public class HealerHealth : MonoBehaviour
         }
         if (health <= 0)
         {
+
             health = 0;
+            rb.constraints = RigidbodyConstraints.None;
             deathLaunch = true;
             StartCoroutine(Die());
         }
@@ -64,10 +66,11 @@ public class HealerHealth : MonoBehaviour
     }
     IEnumerator Die()
     {
+        //rb.constraints = RigidbodyConstraints.None;
         UI.gameObject.SetActive(false);
         cam.gameObject.transform.position = new Vector3(0, 8.3f, -15.75f);
         cam.gameObject.transform.rotation = Quaternion.Euler(65, 0, 0);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2.1f);
         SceneManager.LoadScene("Death", LoadSceneMode.Single);
         SceneManager.UnloadSceneAsync("Main");
         //Destroy(gameObject);
