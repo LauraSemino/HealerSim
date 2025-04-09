@@ -1,35 +1,36 @@
-using NodeCanvas.Tasks.Actions;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class DeathScreen : MonoBehaviour
+public class StartMan : MonoBehaviour
 {
-    public Button RestartButt;
+    public Button StartButt;
     public Button QuitButt;
-    // public Scene GameScene;
     // Start is called before the first frame update
     void Start()
     {
-        RestartButt.onClick.AddListener(RestartClick);
+        StartButt.onClick.AddListener(StartClick);
         QuitButt.onClick.AddListener(QuitClick);
     }
 
     // Update is called once per frame
     void Update()
     {
-      
+        
     }
-    void RestartClick()
+    
+    void StartClick()
     {
+        //Debug.Log("start");
         SceneManager.LoadScene("Main", LoadSceneMode.Single);
-        SceneManager.UnloadSceneAsync("Death");
+        SceneManager.UnloadSceneAsync("Start");
     }
+
     void QuitClick()
     {
         Application.Quit();
     }
+    
 }

@@ -24,8 +24,8 @@ namespace NodeCanvas.Tasks.Actions {
 		protected override void OnExecute() {
             float distanceToTarget = Vector3.Distance(agent.transform.position, target.value.gameObject.transform.position);
             float distanceToAlly = Vector3.Distance(agent.transform.position, ally.value.gameObject.transform.position);
-            Debug.Log(distanceToAlly);
-            Debug.Log(distanceToTarget);
+            //Debug.Log(distanceToAlly);
+           // Debug.Log(distanceToTarget);
             Vector3 direction;
             if (distanceToTarget < atkRange)
             {

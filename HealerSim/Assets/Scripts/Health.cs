@@ -24,27 +24,32 @@ public class Health : MonoBehaviour
         //healthBackground.transform.LookAt(Camera.main.transform);
         float healthRatio;
         healthRatio = health / maxHealth;
-        healthDisplay.transform.localScale = new Vector3 (healthRatio,1,1);
-        if(health > maxHealth)
+        if(healthDisplay != null)
         {
-            health = maxHealth;
+            healthDisplay.transform.localScale = new Vector3(healthRatio, 1, 1);
+            if (health > maxHealth)
+            {
+                health = maxHealth;
+            }
+            if (health == maxHealth)
+            {
+                healthDisplay.GetComponentInChildren<Renderer>().material.color = Color.green;
+            }
+            else if (health < maxHealth && health > maxHealth / 3)
+            {
+                healthDisplay.GetComponentInChildren<Renderer>().material.color = Color.yellow;
+            }
+            else if (health <= maxHealth / 3)
+            {
+                healthDisplay.GetComponentInChildren<Renderer>().material.color = Color.red;
+            }
+            if (health <= 0)
+            {
+                StartCoroutine(Die());
+            }
         }
-        if(health ==  maxHealth)
-        {
-            healthDisplay.GetComponentInChildren<Renderer>().material.color = Color.green;
-        }
-        else if (health < maxHealth && health > maxHealth / 3)
-        {
-            healthDisplay.GetComponentInChildren<Renderer>().material.color = Color.yellow;
-        }
-        else if (health <= maxHealth /3)
-        {
-            healthDisplay.GetComponentInChildren<Renderer>().material.color = Color.red;
-        }
-        if(health <= 0)
-        {
-            StartCoroutine(Die());
-        }
+        
+      
     }
     IEnumerator Die()
     {
