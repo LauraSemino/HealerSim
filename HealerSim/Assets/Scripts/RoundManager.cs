@@ -8,7 +8,9 @@ using UnityEngine;
 public class RoundManager : MonoBehaviour
 {
     public Transform[] eSpawns;
+    public Transform[] fSpawns;
     public List<GameObject> enemies;
+    public List<GameObject> friends;
     public GameObject[] unitPrefabs;
     public int roundCount;
     public TextMeshProUGUI roundTXT;
@@ -29,17 +31,25 @@ public class RoundManager : MonoBehaviour
         if(enemies.Count == 0)
         {
             roundCount++;
+            foreach (GameObject friend in friends)
+            {
+                friend.transform.position = fSpawns[friends.IndexOf(friend)].position;
+            }
             spawnUnits();
         }
-
+        List<GameObject> deadGuys = new List<GameObject>();
         foreach(GameObject enemy in enemies)
         {
             if (enemy.GetComponent<Health>().health <= 0)
             {
-                enemies.RemoveAt(enemies.IndexOf(enemy));
+                deadGuys.Add(enemy);
+                //enemies.Remove(enemy);
             }
         }
-
+        foreach(GameObject enemy in deadGuys)
+        {
+            enemies.Remove(enemy);
+        }
 
     }
 
