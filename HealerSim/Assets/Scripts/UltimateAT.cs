@@ -2,6 +2,7 @@ using NodeCanvas.Framework;
 using ParadoxNotion.Design;
 using System.ComponentModel;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 using static UnityEngine.GraphicsBuffer;
 
 namespace NodeCanvas.Tasks.Actions {
@@ -14,7 +15,12 @@ namespace NodeCanvas.Tasks.Actions {
 		public Collider[] friends;
         public LayerMask fren;
 
-		public Material mat1;
+
+        public Light light;
+        public Color defaultLight;
+        public Color bluLight;
+        public Color pinkLight;
+        public Material mat1;
 		public Material mat2;
         //Use for initialization. This is called only once in the lifetime of the task.
         //Return null if init was successfull. Return an error string otherwise
@@ -30,7 +36,7 @@ namespace NodeCanvas.Tasks.Actions {
             {
                 ultAura.gameObject.SetActive(true);
             }
-                
+            defaultLight = light.color;
             //EndAction(true);
         }
 
@@ -59,10 +65,13 @@ namespace NodeCanvas.Tasks.Actions {
                     }
                     if (Mathf.RoundToInt(ultActiveTimer % 2) == 0)
                     {
+                        light.color = bluLight;
+                        
                         ultAura.gameObject.GetComponent<MeshRenderer>().material = mat1;
                     }
                     else if (Mathf.RoundToInt(ultActiveTimer) % 2 == 1)
                     {
+                        light.color = pinkLight;
                         ultAura.gameObject.GetComponent<MeshRenderer>().material = mat2;
                     }
 
@@ -70,6 +79,7 @@ namespace NodeCanvas.Tasks.Actions {
                 }
                 else
                 {
+                    light.color = defaultLight;
                     ultAura.gameObject.SetActive(false);
                     ultCharge.value = 0;
                     EndAction(true);
