@@ -33,6 +33,10 @@ namespace NodeCanvas.Tasks.Conditions {
 		protected override bool OnCheck()
 		{
 			Collider[] enemies = Physics.OverlapSphere(agent.transform.position, radius, opponent);
+			if (enemies.Count() == 0)
+			{
+				target.value = null;
+			}
 			float closest = Mathf.Infinity;
 			GameObject bestTarget = null;
 			

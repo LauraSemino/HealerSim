@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b44515d50e0fd3749980aba245f9cbb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 5
   maxHealth: 5
   healthDisplay: {fileID: 5368574026036925141}
 --- !u!114 &4903850187111641372
@@ -78,7 +78,7 @@ MonoBehaviour:
     _version: 3.31
     _category: 
     _comments: 
-    _translation: {x: -137, y: -71}
+    _translation: {x: 50, y: -8}
     _zoomFactor: 0.9593508
   _firstActivation: 0
   _enableAction: 0

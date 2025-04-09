@@ -25,7 +25,7 @@ namespace NodeCanvas.Tasks.Conditions {
 		//Called once per frame while the condition is active.
 		//Return whether the condition is success or failure.
 		protected override bool OnCheck() {
-			if(agent.gameObject.GetComponent<Health>().health <= 0)
+			if(agent.gameObject.GetComponent<Health>().health <= 0 && agent.gameObject.GetComponent<Health>() != null)
 			{
                 return true;
             }
