@@ -2,6 +2,7 @@ using NodeCanvas.Framework;
 using ParadoxNotion.Design;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.Timeline;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,11 +13,15 @@ namespace NodeCanvas.Tasks.Actions {
 		public BBParameter<float> ability1Cooldown;
         public BBParameter<float> ability2Cooldown;
 		public BBParameter<float> A2Timer;
+		public BBParameter<float> ultCharge;
 
         public TextMeshProUGUI A1cooldownCount;
 		public GameObject A1cooldownShade;
         public TextMeshProUGUI A2cooldownCount;
         public GameObject A2cooldownShade;
+        public TextMeshProUGUI ultAmount;
+        public GameObject inactiveUlt;
+		public GameObject activeUlt;
 
         public TextMeshProUGUI A2activeCount;
         public GameObject A2activeShade;
@@ -71,7 +76,7 @@ namespace NodeCanvas.Tasks.Actions {
 			{
 				A2cooldownShade.SetActive(true);
                 A2cooldownCount.gameObject.SetActive(true);
-                A2cooldownCount.text = Mathf.Ceil(ability2Cooldown.value).ToString();
+                A2cooldownCount.text = Mathf.Floor(ability2Cooldown.value).ToString();
                 ability2Cooldown.value -= Time.deltaTime;
             }
 			else
@@ -79,7 +84,23 @@ namespace NodeCanvas.Tasks.Actions {
                 A2cooldownCount.gameObject.SetActive(false);
                 A2cooldownShade.SetActive(false);
             }
+			if(ultCharge.value >= 99)
+			{
+				ultCharge = 100;
+				ultAmount.gameObject.SetActive(false);
+                inactiveUlt.SetActive(false);
+				activeUlt.SetActive(true);
+            }
+			else if(ultCharge.value < 100)
+			{
+               
+                ultCharge.value += Time.deltaTime/2;
+                ultAmount.text = Mathf.Ceil(ultCharge.value).ToString();
+                ultAmount.gameObject.SetActive(true);
+                inactiveUlt.SetActive(true);
+                activeUlt.SetActive(false);
 
+            }
         }
 
 		//Called when the task is disabled.

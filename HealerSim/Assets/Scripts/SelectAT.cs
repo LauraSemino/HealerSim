@@ -68,9 +68,32 @@ namespace NodeCanvas.Tasks.Actions {
 			{
                 selectSig.value.transform.position = cam.WorldToScreenPoint(new Vector3(target.value.transform.position.x, target.value.transform.position.y + 5, target.value.transform.position.z));
             }
-            if(Input.GetMouseButton(0))
+            if(Input.GetMouseButton(0) && target.value != null)
 			{
-                selectSig.value.GetComponent<RawImage>().color = Color.green;
+				if(target.value.GetComponent<Health>() != null)
+				{
+                    if (target.value.gameObject.GetComponent<Health>().health < target.value.gameObject.GetComponent<Health>().maxHealth)
+                    {
+                        selectSig.value.GetComponent<RawImage>().color = Color.green;
+                    }
+					else
+					{
+                        selectSig.value.GetComponent<RawImage>().color = Color.white;
+                    }
+                }
+				if (target.value.GetComponent<HealerHealth>() != null)
+				{
+                    if (target.value.gameObject.GetComponent<HealerHealth>().health < target.value.gameObject.GetComponent<HealerHealth>().maxHealth)
+                    {
+                        selectSig.value.GetComponent<RawImage>().color = Color.green;
+                    }
+					else
+					{
+                        selectSig.value.GetComponent<RawImage>().color = Color.white;
+                    }
+                }
+                
+
             }
 			if(Input.GetMouseButtonUp(0))
 			{

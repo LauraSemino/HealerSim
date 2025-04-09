@@ -8,6 +8,9 @@ namespace NodeCanvas.Tasks.Actions {
 
 	public class HealAT : ActionTask {
 
+		public BBParameter<float> totalultCharge;
+		//public float ultPerHeal;
+
 		public float healVal;
 		public BBParameter<GameObject> target;
 		public BBParameter<float> bonusHeal;
@@ -29,15 +32,25 @@ namespace NodeCanvas.Tasks.Actions {
 		 
 			if(target.value.GetComponent<Health>() != null && cooldown.value <= 0)
 			{
+				if(target.value.GetComponent<Health>().health < target.value.GetComponent<Health>().maxHealth)
+				{
+
+                    target.value.GetComponent<Health>().health += healVal * bonusHeal.value;
+                    cooldown.value = fireRate;
+                    totalultCharge.value += healVal * bonusHeal.value;
+                }
                 
-                target.value.GetComponent<Health>().health += healVal * bonusHeal.value;
-				cooldown.value = fireRate;
+               
             }
             if (target.value.GetComponent<HealerHealth>() != null && cooldown.value <= 0)
 
             {
-                target.value.GetComponent<HealerHealth>().health += healVal/2 * bonusHeal.value;
-                cooldown.value = fireRate;
+				if (target.value.GetComponent<HealerHealth>().health < target.value.GetComponent<HealerHealth>().maxHealth)
+				{
+					target.value.GetComponent<HealerHealth>().health += healVal / 2 * bonusHeal.value;
+					cooldown.value = fireRate;
+				}
+
             }
 
 
