@@ -37,6 +37,7 @@ namespace NodeCanvas.Tasks.Actions {
                 ultAura.gameObject.SetActive(true);
             }
             defaultLight = light.color;
+            ultActiveTimer = 10;
             //EndAction(true);
         }
 
