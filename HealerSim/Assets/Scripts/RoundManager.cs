@@ -23,11 +23,11 @@ public class RoundManager : MonoBehaviour
     void Update()
     {
         roundTXT.text = ("Round: " + roundCount);
-        if(Input.GetKeyDown(KeyCode.Space))
+       /** if(Input.GetKeyDown(KeyCode.Space))
         {
             spawnUnits();
-        }
-        
+        } 
+        */
         
 
         List<GameObject> deadGuys = new List<GameObject>();
