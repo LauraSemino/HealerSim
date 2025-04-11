@@ -45,6 +45,7 @@ public class Health : MonoBehaviour
             }
             if (health <= 0)
             {
+                
                 StartCoroutine(Die());
             }
         }
@@ -53,6 +54,7 @@ public class Health : MonoBehaviour
     }
     IEnumerator Die()
     {
+        health = 0;
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }
