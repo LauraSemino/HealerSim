@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RoundManager : MonoBehaviour
 {
@@ -23,12 +24,16 @@ public class RoundManager : MonoBehaviour
     void Update()
     {
         roundTXT.text = ("Round: " + roundCount);
-       /** if(Input.GetKeyDown(KeyCode.Space))
+        /** if(Input.GetKeyDown(KeyCode.Space))
+         {
+             spawnUnits();
+         } 
+         */
+        if (roundCount >= 11)
         {
-            spawnUnits();
-        } 
-        */
-        
+            SceneManager.LoadScene("Victory", LoadSceneMode.Single);
+            SceneManager.UnloadSceneAsync("Main");
+        }
 
         List<GameObject> deadGuys = new List<GameObject>();
         foreach (GameObject enemy in enemies)
@@ -60,11 +65,14 @@ public class RoundManager : MonoBehaviour
 
         if (enemies.Count == 0)
         {
-            if(roundCount < 10)
+            if (roundCount <= 10)
             {
                 roundCount++;
             }
             
+
+
+
             //respawns allies randomly
             if (roundCount > 0 && roundCount < 3)
             {
@@ -198,14 +206,14 @@ public class RoundManager : MonoBehaviour
                 enemies[0].GetComponent<Health>().maxHealth = 15;
                 enemies[0].transform.position = eSpawns[0].position;
                 enemies.Add(Instantiate(unitPrefabs[1]));
-                enemies[0].GetComponent<Health>().maxHealth = 15;
-                enemies[0].transform.position = eSpawns[1].position;
+                enemies[1].GetComponent<Health>().maxHealth = 15;
+                enemies[1].transform.position = eSpawns[1].position;
                 enemies.Add(Instantiate(unitPrefabs[0]));
-                enemies[1].GetComponent<Health>().maxHealth = 8;
-                enemies[1].transform.position = eSpawns[2].position;
+                enemies[2].GetComponent<Health>().maxHealth = 8;
+                enemies[2].transform.position = eSpawns[2].position;
                 enemies.Add(Instantiate(unitPrefabs[0]));
-                enemies[1].GetComponent<Health>().maxHealth = 8;
-                enemies[1].transform.position = eSpawns[3].position;
+                enemies[3].GetComponent<Health>().maxHealth = 8;
+                enemies[3].transform.position = eSpawns[3].position;
                 break;
             case 9:
                 enemies.Add(Instantiate(unitPrefabs[2]));
