@@ -34,10 +34,13 @@ namespace NodeCanvas.Tasks.Actions {
 			{
 				if(target.value.GetComponent<Health>().health < target.value.GetComponent<Health>().maxHealth)
 				{
-
-                    target.value.GetComponent<Health>().health += healVal * bonusHeal.value;
-                    cooldown.value = fireRate;
-                    totalultCharge.value += healVal * bonusHeal.value * 1.05f;
+					if(target.value.GetComponent<Health>().dying == false)
+					{
+                        target.value.GetComponent<Health>().health += healVal * bonusHeal.value;
+                        cooldown.value = fireRate;
+                        totalultCharge.value += healVal * bonusHeal.value * 1.05f;
+                    }
+                    
                 }
                 
                
@@ -47,8 +50,10 @@ namespace NodeCanvas.Tasks.Actions {
             {
 				if (target.value.GetComponent<HealerHealth>().health < target.value.GetComponent<HealerHealth>().maxHealth)
 				{
-					target.value.GetComponent<HealerHealth>().health += healVal / 2 * bonusHeal.value;
-					cooldown.value = fireRate;
+					
+						target.value.GetComponent<HealerHealth>().health += healVal / 2 * bonusHeal.value;
+						cooldown.value = fireRate;
+					
 				}
 
             }

@@ -9,12 +9,13 @@ public class Health : MonoBehaviour
     public float health;
     public float maxHealth;
     public GameObject healthDisplay;
-   // public GameObject healthBackground;
-  //  public GameObject camera
-  
+    // public GameObject healthBackground;
+    //  public GameObject camera
+    public bool dying;
     void Start()
     {
         health = maxHealth;
+        dying = false;
     }
 
     // Update is called once per frame
@@ -43,10 +44,15 @@ public class Health : MonoBehaviour
             {
                 healthDisplay.GetComponentInChildren<Renderer>().material.color = Color.red;
             }
+            
             if (health <= 0)
             {
-                
+                dying = true;
                 StartCoroutine(Die());
+            }
+            if(dying == true)
+            {
+                health = 0;
             }
         }
         
@@ -54,7 +60,7 @@ public class Health : MonoBehaviour
     }
     IEnumerator Die()
     {
-        health = 0;
+        
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }
