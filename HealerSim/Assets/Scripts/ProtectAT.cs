@@ -33,6 +33,12 @@ namespace NodeCanvas.Tasks.Actions {
                 distanceToAlly = Vector3.Distance(agent.transform.position, agent.transform.position);
             }
 
+            if (ally.value.tag == "Healer" && target.value.tag == "Ranger")
+            {
+                protectRange = 50f;
+            }
+           
+
             //Debug.Log(distanceToAlly);
             // Debug.Log(distanceToTarget);
             Vector3 direction;
