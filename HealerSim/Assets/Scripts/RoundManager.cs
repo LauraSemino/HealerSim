@@ -84,7 +84,7 @@ public class RoundManager : MonoBehaviour
                  
                 }
             }
-            else if (roundCount >= 6)
+            else if (roundCount >= 6 && roundCount <= 10)
             {
                 if (friends.Count < 3)
                 {
@@ -110,6 +110,7 @@ public class RoundManager : MonoBehaviour
     {
         switch (roundCount)
         {
+           
             case 1:
                 enemies.Add(Instantiate(unitPrefabs[0]));
                 enemies[0].GetComponent<Health>().maxHealth = 8;
@@ -240,6 +241,16 @@ public class RoundManager : MonoBehaviour
                 enemies[4].GetComponent<Health>().maxHealth = 6;
                 enemies[4].transform.position = eSpawns[4].position;
                 break;
+            case 12:
+                //debug round
+                enemies.Add(Instantiate(unitPrefabs[1]));
+                enemies[0].GetComponent<Health>().maxHealth = 12;
+                enemies[0].transform.position = eSpawns[0].position;
+                enemies.Add(Instantiate(unitPrefabs[0]));
+                enemies[1].GetComponent<Health>().maxHealth = 1;
+                enemies[1].transform.position = eSpawns[1].position;
+                break;
         }
-    }
+            
+        }
 }

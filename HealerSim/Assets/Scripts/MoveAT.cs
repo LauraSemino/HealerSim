@@ -42,8 +42,6 @@ namespace NodeCanvas.Tasks.Actions {
 			{
                 atkDur.value -= Time.deltaTime;
             }
-            
-
 
             velocity.value += charAccel.value;
 			float groundSpeed = Mathf.Sqrt(velocity.value.x * velocity.value.x + velocity.value.z * velocity.value.z);

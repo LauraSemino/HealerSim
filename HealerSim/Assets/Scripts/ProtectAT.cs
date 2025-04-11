@@ -32,15 +32,15 @@ namespace NodeCanvas.Tasks.Actions {
             {
                 distanceToAlly = Vector3.Distance(agent.transform.position, agent.transform.position);
             }
-            
+
             //Debug.Log(distanceToAlly);
             // Debug.Log(distanceToTarget);
             Vector3 direction;
             if (distanceToTarget < atkRange)
-            {
-                EndAction(true);
-                return;
-            }
+              {
+                  EndAction(true);
+                  return;
+              }
             if (distanceToAlly > protectRange)
             {
                 direction = (ally.value.transform.position - agent.transform.position);
@@ -48,18 +48,18 @@ namespace NodeCanvas.Tasks.Actions {
             else
             {
                 direction = (target.value.transform.position - agent.transform.position);
-      
+
             }
             direction = new Vector3(direction.x, 0, direction.z);
             charAccel.value += direction.normalized * steerAccel * Time.deltaTime;
             EndAction(true);
-            
-		}
+
+        }
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
-			
-		}
+            
+        }
 
 		//Called when the task is disabled.
 		protected override void OnStop() {
