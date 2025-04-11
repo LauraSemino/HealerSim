@@ -473,7 +473,7 @@ GameObject:
   - component: {fileID: 6732560094667004270}
   m_Layer: 6
   m_Name: FriendlyUnit
-  m_TagString: Untagged
+  m_TagString: Melee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

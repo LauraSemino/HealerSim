@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4544926487711230059}
   m_Layer: 7
   m_Name: EnemyUnit
-  m_TagString: Untagged
+  m_TagString: Melee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

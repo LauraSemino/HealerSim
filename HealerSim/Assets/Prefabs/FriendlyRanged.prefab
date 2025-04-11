@@ -578,7 +578,7 @@ GameObject:
   - component: {fileID: 3628233049006989843}
   m_Layer: 6
   m_Name: FriendlyRanged
-  m_TagString: Untagged
+  m_TagString: Ranger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
