@@ -21,24 +21,36 @@ namespace NodeCanvas.Tasks.Actions {
 		//Call EndAction() to mark the action as finished, either in success or failure.
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
-            activeTime.value = 6;
+			if (cooldown.value <= 0)
+			{
+                activeTime.value = 6;
+            }
+           
             //EndAction(true);
         }
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
-
-			activeTime.value -= Time.deltaTime;
-			if(activeTime.value >= 0)
+            activeTime.value -= Time.deltaTime;
+            if (cooldown.value <= 0)
 			{
-                bonusHeal.value = 1.5f;
+               
+                if (activeTime.value >= 0)
+                {
+                    bonusHeal.value = 1.5f;
+                }
+                else
+                {
+                    cooldown.value = fireRate;
+                    bonusHeal.value = 1;
+                    EndAction(true);
+                }
             }
             else
-			{
-                cooldown.value = fireRate;
-                bonusHeal.value = 1;
-				EndAction(true);
-			}
+            {
+                EndAction(true);
+            }
+			
 			
 
         }
