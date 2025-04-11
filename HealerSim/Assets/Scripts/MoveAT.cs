@@ -44,6 +44,7 @@ namespace NodeCanvas.Tasks.Actions {
             }
 
             velocity.value += charAccel.value;
+			//velocity.value = new Vector3(velocity.value.x, velocity.value.y, velocity.value.z);
 			float groundSpeed = Mathf.Sqrt(velocity.value.x * velocity.value.x + velocity.value.z * velocity.value.z);
 			if(maxSpeed < groundSpeed)
 			{

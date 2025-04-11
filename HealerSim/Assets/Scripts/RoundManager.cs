@@ -243,12 +243,12 @@ public class RoundManager : MonoBehaviour
                 break;
             case 12:
                 //debug round
-                enemies.Add(Instantiate(unitPrefabs[1]));
+                enemies.Add(Instantiate(unitPrefabs[6]));
                 enemies[0].GetComponent<Health>().maxHealth = 4;
                 enemies[0].transform.position = eSpawns[0].position;
-                friends.Add(Instantiate(unitPrefabs[4]));
-                friends[1].GetComponent<Health>().maxHealth = 10;
-                friends[1].transform.position = fSpawns[1].position;
+                //friends.Add(Instantiate(unitPrefabs[7]));
+               // friends[1].GetComponent<Health>().maxHealth = 4;
+               // friends[1].transform.position = fSpawns[1].position;
                 break;
         }
             

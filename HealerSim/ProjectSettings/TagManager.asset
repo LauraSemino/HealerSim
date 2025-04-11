@@ -8,6 +8,7 @@ TagManager:
   - Ranger
   - Tank
   - Melee
+  - Rogue
   layers:
   - Default
   - TransparentFX
