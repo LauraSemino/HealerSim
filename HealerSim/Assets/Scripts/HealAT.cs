@@ -37,7 +37,7 @@ namespace NodeCanvas.Tasks.Actions {
 
                     target.value.GetComponent<Health>().health += healVal * bonusHeal.value;
                     cooldown.value = fireRate;
-                    totalultCharge.value += healVal * bonusHeal.value;
+                    totalultCharge.value += healVal * bonusHeal.value * 1.05f;
                 }
                 
                
