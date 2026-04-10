@@ -25,7 +25,7 @@ namespace NodeCanvas.Tasks.Actions {
 			{
                 activeTime.value = 6;
             }
-           
+            FMODUnity.RuntimeManager.PlayOneShot("{a6955195-f078-4fde-b4c8-d4f59b897270}");
             //EndAction(true);
         }
 
@@ -34,7 +34,7 @@ namespace NodeCanvas.Tasks.Actions {
             activeTime.value -= Time.deltaTime;
             if (cooldown.value <= 0)
 			{
-               
+                
                 if (activeTime.value >= 0)
                 {
                     bonusHeal.value = 1.5f;

@@ -22,6 +22,8 @@ namespace NodeCanvas.Tasks.Actions {
         public Color pinkLight;
         public Material mat1;
 		public Material mat2;
+
+        bool p;
         //Use for initialization. This is called only once in the lifetime of the task.
         //Return null if init was successfull. Return an error string otherwise
         protected override string OnInit() {
@@ -39,6 +41,7 @@ namespace NodeCanvas.Tasks.Actions {
             defaultLight = light.color;
             ultActiveTimer = 10;
             //EndAction(true);
+            p = false;
         }
 
 		//Called once per frame while the action is active.
@@ -49,6 +52,13 @@ namespace NodeCanvas.Tasks.Actions {
                 if (ultActiveTimer > 0)
                 {
                     ultActiveTimer -= Time.deltaTime;
+                
+                    if (p == false)
+                    {
+                        FMODUnity.RuntimeManager.PlayOneShot("{85e40928-e6e2-4f35-b267-29fd7db0d2ab}");
+                        p = true;
+                    }
+                    
                     friends = Physics.OverlapSphere(agent.transform.position, 150, fren);
                     foreach (Collider friend in friends)
                     {
@@ -60,9 +70,6 @@ namespace NodeCanvas.Tasks.Actions {
                         {
                             friend.gameObject.GetComponent<HealerHealth>().health += healVal * Time.deltaTime;
                         }
-
-
-
                     }
                     if (Mathf.RoundToInt(ultActiveTimer % 2) == 0)
                     {

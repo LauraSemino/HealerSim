@@ -35,12 +35,14 @@ public class PauseMan : MonoBehaviour
        
         if (paused)
         {
+            FMODUnity.RuntimeManager.PauseAllEvents(true);
             Time.timeScale = 0.0f;
             pauseButt.gameObject.SetActive(false);
             
         }
         else if (!paused)
         {
+            FMODUnity.RuntimeManager.PauseAllEvents(false);
             Time.timeScale = 1.0f;
             pauseButt.gameObject.SetActive(true);
            

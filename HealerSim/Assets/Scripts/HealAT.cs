@@ -38,6 +38,14 @@ namespace NodeCanvas.Tasks.Actions {
 					{
                         target.value.GetComponent<Health>().health += healVal * bonusHeal.value;
                         cooldown.value = fireRate;
+						if(healVal == 0.35f)
+						{
+                            FMODUnity.RuntimeManager.PlayOneShot("{70867d9a-9b9c-464f-bc1c-3215cf5443e0}");
+                        }
+						else if (healVal == 3f)
+                        {
+                            FMODUnity.RuntimeManager.PlayOneShot("{88071625-6d05-4a24-a072-21ed547770b0}");
+                        }
                         totalultCharge.value += healVal * bonusHeal.value * 1.05f;
                     }
                     
@@ -50,9 +58,16 @@ namespace NodeCanvas.Tasks.Actions {
             {
 				if (target.value.GetComponent<HealerHealth>().health < target.value.GetComponent<HealerHealth>().maxHealth)
 				{
-					
-						target.value.GetComponent<HealerHealth>().health += healVal / 2 * bonusHeal.value;
-						cooldown.value = fireRate;
+                    if (healVal == 0.35f)
+                    {
+                        FMODUnity.RuntimeManager.PlayOneShot("{70867d9a-9b9c-464f-bc1c-3215cf5443e0}");
+                    }
+                    else if (healVal == 3f)
+                    {
+                        FMODUnity.RuntimeManager.PlayOneShot("{88071625-6d05-4a24-a072-21ed547770b0}");
+                    }                  
+					target.value.GetComponent<HealerHealth>().health += healVal / 2 * bonusHeal.value;
+					cooldown.value = fireRate;
 					
 				}
 
