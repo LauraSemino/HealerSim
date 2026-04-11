@@ -31,8 +31,8 @@ public class RoundManager : MonoBehaviour
          */
         if (roundCount >= 11)
         {
-            SceneManager.LoadScene("Victory", LoadSceneMode.Single);
-            SceneManager.UnloadSceneAsync("Main");
+           SceneManager.LoadScene("Victory", LoadSceneMode.Single);
+           SceneManager.UnloadSceneAsync("Main");
         }
 
         List<GameObject> deadGuys = new List<GameObject>();
@@ -120,12 +120,14 @@ public class RoundManager : MonoBehaviour
         {
            
             case 1:
+                FMODUnity.RuntimeManager.PlayOneShot("{08c839d2-341e-4072-a24c-57d4fb50d786}");
                 enemies.Add(Instantiate(unitPrefabs[0]));
                 enemies[0].GetComponent<Health>().maxHealth = 8;
                 enemies[0].transform.position = eSpawns[0].position;
                 
                 break;
             case 2:
+                FMODUnity.RuntimeManager.PlayOneShot("{90c63579-19d1-4f3c-9de0-a3c429ae74d8}");
                 enemies.Add(Instantiate(unitPrefabs[0]));
                 enemies[0].GetComponent<Health>().maxHealth = 4;
                 enemies[0].transform.position = eSpawns[2].position;
@@ -133,11 +135,12 @@ public class RoundManager : MonoBehaviour
                 enemies[1].GetComponent<Health>().maxHealth = 4;
                 enemies[1].transform.position = eSpawns[1].position;
                 break;
-            case 3:              
+            case 3:
                 //tank added to your team
                 friends.Add(Instantiate(unitPrefabs[4]));
                 friends[friends.Count-1].transform.position = fSpawns[friends.Count-1].position;
 
+                FMODUnity.RuntimeManager.PlayOneShot("{c02c74fe-fa94-4c3f-b429-618c75759d10}");
                 enemies.Add(Instantiate(unitPrefabs[1]));
                 enemies[0].GetComponent<Health>().maxHealth = 12;
                 enemies[0].transform.position = eSpawns[0].position;
@@ -149,6 +152,7 @@ public class RoundManager : MonoBehaviour
                 enemies[1].transform.position = eSpawns[2].position;
                 break;
             case 4:
+                FMODUnity.RuntimeManager.PlayOneShot("{4487d470-e00f-4e3e-a865-152fa76c6845}");
                 enemies.Add(Instantiate(unitPrefabs[1]));
                 enemies[0].GetComponent<Health>().maxHealth = 12;
                 enemies[0].transform.position = eSpawns[0].position;
@@ -162,6 +166,7 @@ public class RoundManager : MonoBehaviour
                 friends.Add(Instantiate(unitPrefabs[5]));
                 friends[friends.Count - 1].transform.position = fSpawns[friends.Count-1].position;
 
+                FMODUnity.RuntimeManager.PlayOneShot("{4efd7aa8-d165-427f-a16d-48464854cdbc}");
                 enemies.Add(Instantiate(unitPrefabs[1]));
                 enemies[0].GetComponent<Health>().maxHealth = 12;
                 enemies[0].transform.position = eSpawns[0].position;
@@ -173,6 +178,7 @@ public class RoundManager : MonoBehaviour
                 enemies[2].transform.position = eSpawns[2].position;
                 break;
             case 6:
+                FMODUnity.RuntimeManager.PlayOneShot("{50a03cd1-218f-4718-8d95-b3106ef13e95}");
                 enemies.Add(Instantiate(unitPrefabs[0]));
                 enemies[0].GetComponent<Health>().maxHealth = 4;
                 enemies[0].transform.position = eSpawns[0].position;
@@ -190,6 +196,7 @@ public class RoundManager : MonoBehaviour
                 enemies[4].transform.position = eSpawns[4].position;
                 break;
             case 7:
+                FMODUnity.RuntimeManager.PlayOneShot("{75f00cf4-5a22-419f-9746-a82dd4e5e2d3}");
                 enemies.Add(Instantiate(unitPrefabs[1]));
                 enemies[0].GetComponent<Health>().maxHealth = 12;
                 enemies[0].transform.position = eSpawns[0].position;
@@ -202,6 +209,7 @@ public class RoundManager : MonoBehaviour
                 
                 break;
             case 8:
+                FMODUnity.RuntimeManager.PlayOneShot("{279f5064-24d1-4d27-8593-0079dfef5ae1}");
                 enemies.Add(Instantiate(unitPrefabs[1]));
                 enemies[0].GetComponent<Health>().maxHealth = 15;
                 enemies[0].transform.position = eSpawns[0].position;
@@ -216,6 +224,7 @@ public class RoundManager : MonoBehaviour
                 enemies[3].transform.position = eSpawns[3].position;
                 break;
             case 9:
+                FMODUnity.RuntimeManager.PlayOneShot("{457f178f-2b39-4f81-ac7c-5004b757e3a6}");
                 enemies.Add(Instantiate(unitPrefabs[2]));
                 enemies[0].GetComponent<Health>().maxHealth = 6;
                 enemies[0].transform.position = eSpawns[0].position;
@@ -233,6 +242,7 @@ public class RoundManager : MonoBehaviour
                 enemies[4].transform.position = eSpawns[4].position;
                 break;
             case 10:
+                FMODUnity.RuntimeManager.PlayOneShot("{782a28ad-3ea5-402a-86f3-e57f4d462cca}");
                 enemies.Add(Instantiate(unitPrefabs[1]));
                 enemies[0].GetComponent<Health>().maxHealth = 18;
                 enemies[0].transform.position = eSpawns[0].position;

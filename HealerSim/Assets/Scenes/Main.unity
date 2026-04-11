@@ -3880,7 +3880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
   nonRigidbodyVelocity: 0
-  attenuationObject: {fileID: 0}
+  attenuationObject: {fileID: 1637255593}
 --- !u!1 &1015565240
 GameObject:
   m_ObjectHideFlags: 0
@@ -8505,8 +8505,8 @@ MonoBehaviour:
     _version: 3.31
     _category: 
     _comments: 
-    _translation: {x: 210.86203, y: 24.407696}
-    _zoomFactor: 0.7345991
+    _translation: {x: 59, y: 34}
+    _zoomFactor: 1
   _firstActivation: 0
   _enableAction: 0
   _disableAction: 0

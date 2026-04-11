@@ -836,6 +836,7 @@ MonoBehaviour:
   health: 4
   maxHealth: 4
   healthDisplay: {fileID: 7588420500272937635}
+  dying: 0
 --- !u!114 &7419709389364901374
 MonoBehaviour:
   m_ObjectHideFlags: 0

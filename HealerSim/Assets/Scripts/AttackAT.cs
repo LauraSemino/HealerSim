@@ -40,21 +40,44 @@ namespace NodeCanvas.Tasks.Actions {
 		
         //Called once per frame while the action is active.
         protected override void OnUpdate() {
-
-           
+ 
             atkDur.value -= Time.deltaTime;
             if (atkDur.value <= 0)
-            {
-                if(target.value.GetComponent<Health>() != null)
+            {                
+                if (target.value.GetComponent<Health>() != null)
                 {
+                    int n = Random.Range(0, 2);
+                    switch (n)
+                    {
+                        case 0:
+                            FMODUnity.RuntimeManager.PlayOneShot("{daeca49a-9af2-4401-addf-b310ec0d1747}", target.value.transform.position);
+                            break;
+                        case 1:
+                            FMODUnity.RuntimeManager.PlayOneShot("{ec0b3df7-043a-4296-aeff-b4edd315750e}", target.value.transform.position);
+                            break;
+                        case 2:
+                            FMODUnity.RuntimeManager.PlayOneShot("{a682ce77-7868-42b8-a2cc-5fc57224d4b9}", target.value.transform.position);
+                            break;
+                    }
                     target.value.GetComponent<Health>().health -= damage;
                 }
                 else if (target.value.GetComponent<HealerHealth>() != null)
                 {
+                    int n = Random.Range(0, 2);
+                    switch (n)
+                    {
+                        case 0:
+                            FMODUnity.RuntimeManager.PlayOneShot("{daeca49a-9af2-4401-addf-b310ec0d1747}", target.value.transform.position);
+                            break;
+                        case 1:
+                            FMODUnity.RuntimeManager.PlayOneShot("{ec0b3df7-043a-4296-aeff-b4edd315750e}", target.value.transform.position);
+                            break;
+                        case 2:
+                            FMODUnity.RuntimeManager.PlayOneShot("{a682ce77-7868-42b8-a2cc-5fc57224d4b9}", target.value.transform.position);
+                            break;
+                    }
                     target.value.GetComponent<HealerHealth>().health -= damage;
-                }
-                
-
+                }             
                 atkDur.value = totalAtkTime;
                 //EndAction(true);
             }

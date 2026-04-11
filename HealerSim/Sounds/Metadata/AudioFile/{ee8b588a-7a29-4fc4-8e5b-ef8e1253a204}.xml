@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{ee8b588a-7a29-4fc4-8e5b-ef8e1253a204}">
+		<property name="assetPath">
+			<value>338223__pyro13djt__random-video-game-vocals.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>66.011428571428567</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7ad89f6f-1528-4398-8577-3443237ebe16}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="MixerPort" id="{d4f65c82-a5d2-46a6-b289-f52a0e9f76ed}">
 		<property name="name">
-			<value>New Port</value>
+			<value>UI</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{ad1dd245-52d0-4307-81f9-2a3614db3dc1}</destination>
