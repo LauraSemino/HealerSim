@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{c4e42218-74cf-4c31-abda-32878c5602fb}">
+		<property name="assetPath">
+			<value>497697__syntaxseed__fight-arena-3.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>22.0499992</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>60.700000000000003</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7ad89f6f-1528-4398-8577-3443237ebe16}</destination>
+		</relationship>
+	</object>
+</objects>

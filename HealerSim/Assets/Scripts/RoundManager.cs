@@ -69,7 +69,11 @@ public class RoundManager : MonoBehaviour
             {
                 roundCount++;
             }
-            
+            if (roundCount > 1)
+            { 
+                //not sure if i should keep this tbh
+                //FMODUnity.RuntimeManager.PlayOneShot("{6c05fb38-5fb9-4fb9-a8d4-05f5964f260c}");
+            }
 
 
 
@@ -109,6 +113,7 @@ public class RoundManager : MonoBehaviour
             }
 
             spawnUnits();
+            
         }
 
 
