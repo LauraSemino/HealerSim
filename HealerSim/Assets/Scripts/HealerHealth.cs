@@ -54,12 +54,12 @@ public class HealerHealth : MonoBehaviour
             health = 0;
             rb.constraints = RigidbodyConstraints.None;
             deathLaunch = true;
+          
             StartCoroutine(Die());
         }
        
         if (deathLaunch)
-        {
-
+        {         
             rb.AddForce(new Vector3(10, 0, 0));
             deathLaunch = false;
         }
@@ -67,9 +67,10 @@ public class HealerHealth : MonoBehaviour
     IEnumerator Die()
     {
         //rb.constraints = RigidbodyConstraints.None;
+        FMODUnity.RuntimeManager.PlayOneShot("{61a12e39-1128-429a-85fb-73a1953645a3}");
         UI.gameObject.SetActive(false);
         cam.gameObject.transform.position = new Vector3(0, 8.3f, -15.75f);
-        cam.gameObject.transform.rotation = Quaternion.Euler(65, 0, 0);
+        cam.gameObject.transform.rotation = Quaternion.Euler(65, 0, 0);    
         yield return new WaitForSeconds(2.1f);
         SceneManager.LoadScene("Death", LoadSceneMode.Single);
         SceneManager.UnloadSceneAsync("Main");

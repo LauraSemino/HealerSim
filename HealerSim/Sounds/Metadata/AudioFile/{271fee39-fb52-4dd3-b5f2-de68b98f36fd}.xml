@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{271fee39-fb52-4dd3-b5f2-de68b98f36fd}">
+		<property name="assetPath">
+			<value>Healer-Simran-1-Dies.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>23.248979591836736</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7ad89f6f-1528-4398-8577-3443237ebe16}</destination>
+		</relationship>
+	</object>
+</objects>

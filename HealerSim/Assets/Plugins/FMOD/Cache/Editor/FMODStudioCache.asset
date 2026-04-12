@@ -69,10 +69,10 @@ MonoBehaviour:
   Path: Sounds/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639115262907846442
+  lastModified: 639116121471044578
   FileSizes:
   - Name: Desktop
-    Value: 1652
+    Value: 1878
   Exists: 1
 --- !u!114 &-6762833673409451124
 MonoBehaviour:
@@ -143,11 +143,38 @@ MonoBehaviour:
   Path: Sounds/Build/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 639115255262101302
+  lastModified: 639116097027457220
   FileSizes:
   - Name: Desktop
     Value: 1136992
   Exists: 1
+--- !u!114 &-3734814086464958863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Healer/Healer Dies
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Healer/Healer Dies
+  Guid:
+    Data1: 1637953081
+    Data2: 1117393192
+    Data3: -1586234491
+    Data4: -1555745131
+  Banks:
+  - {fileID: 4452583481213598673}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1118
 --- !u!114 &-3596429007152690537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,6 +229,78 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 50
+--- !u!114 &-1773432580278339542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/HitSound 3/PitchVariance
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: PitchVariance
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1117249947
+    data2: 2906913020
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-1640831352097493728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Healer Hit/PitchVariance
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: PitchVariance
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1117249947
+    data2: 2906913020
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-1193827039259055514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/HitSound 2/PitchVariance
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: PitchVariance
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1117249947
+    data2: 2906913020
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-1063773660865557185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,13 +366,17 @@ MonoBehaviour:
   - {fileID: 5322591089831281103}
   - {fileID: 2558340184812372091}
   - {fileID: 2997724058498312724}
+  - {fileID: -3734814086464958863}
+  - {fileID: 5194099883305186851}
+  - {fileID: 7839849169065574153}
+  - {fileID: 97050248373137571}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4452583481213598673}
   StringsBanks:
   - {fileID: -7006591094534774432}
   cacheVersion: 131848
-  cacheTime: 639115262907846442
+  cacheTime: 639116121471044578
   SerializableEventsDict:
   - key: event:/UI Click
     index: 0
@@ -317,6 +420,37 @@ MonoBehaviour:
     index: 19
   - key: event:/Enviornment
     index: 20
+  - key: event:/Healer/Healer Dies
+    index: 21
+  - key: event:/Healer/Healer Hit
+    index: 22
+--- !u!114 &97050248373137571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tank/Tank Attack
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Tank/Tank Attack
+  Guid:
+    Data1: -293070927
+    Data2: 1225146039
+    Data3: -1148475755
+    Data4: -1107132697
+  Banks:
+  - {fileID: 4452583481213598673}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
 --- !u!114 &1873777535382447427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,11 +628,39 @@ MonoBehaviour:
   Path: Sounds/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639115262907831300
+  lastModified: 639116121471004259
   FileSizes:
   - Name: Desktop
-    Value: 2205600
+    Value: 3050656
   Exists: 1
+--- !u!114 &5194099883305186851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Healer/Healer Hit
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Healer/Healer Hit
+  Guid:
+    Data1: -727971159
+    Data2: 1335959331
+    Data3: 1792815538
+    Data4: -566530742
+  Banks:
+  - {fileID: 4452583481213598673}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -1640831352097493728}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 714
 --- !u!114 &5322591089831281103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -630,10 +792,38 @@ MonoBehaviour:
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
-  Parameters: []
+  Parameters:
+  - {fileID: -1773432580278339542}
   MinDistance: 1
   MaxDistance: 20
   Length: 1191
+--- !u!114 &7839849169065574153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tank/Tank Attack 2
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Tank/Tank Attack 2
+  Guid:
+    Data1: 1447212852
+    Data2: 1090250435
+    Data3: 1565368504
+    Data4: 1941471359
+  Banks:
+  - {fileID: 4452583481213598673}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 600
 --- !u!114 &7885083099104560990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,7 +847,8 @@ MonoBehaviour:
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
-  Parameters: []
+  Parameters:
+  - {fileID: 9054669567746116349}
   MinDistance: 1
   MaxDistance: 20
   Length: 484
@@ -711,7 +902,32 @@ MonoBehaviour:
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
-  Parameters: []
+  Parameters:
+  - {fileID: -1193827039259055514}
   MinDistance: 1
   MaxDistance: 20
   Length: 354
+--- !u!114 &9054669567746116349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/HitSound 1/PitchVariance
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: PitchVariance
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1117249947
+    data2: 2906913020
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1

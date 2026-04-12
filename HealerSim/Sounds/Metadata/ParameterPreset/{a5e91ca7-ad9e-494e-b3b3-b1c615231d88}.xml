@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{a5e91ca7-ad9e-494e-b3b3-b1c615231d88}">
+		<property name="name">
+			<value>PitchVariance</value>
+		</property>
+		<relationship name="folder">
+			<destination>{e2eaa73a-c560-431e-8234-0abd164f2389}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{2d122be3-9083-4cdd-9915-43cc4a6d9335}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{2d122be3-9083-4cdd-9915-43cc4a6d9335}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{acb316a2-48b0-4912-a628-e8e288a8c057}</destination>
+		</relationship>
+	</object>
+	<object class="RandomizerModulator" id="{acb316a2-48b0-4912-a628-e8e288a8c057}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>cursorPosition</value>
+		</property>
+		<property name="amount">
+			<value>50</value>
+		</property>
+	</object>
+</objects>

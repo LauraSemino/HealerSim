@@ -35,6 +35,7 @@ namespace NodeCanvas.Tasks.Actions {
                 velocity.value = Vector3.zero;
             }
             //EndAction(true);
+            
         }
 
 		
@@ -43,10 +44,32 @@ namespace NodeCanvas.Tasks.Actions {
  
             atkDur.value -= Time.deltaTime;
             if (atkDur.value <= 0)
-            {                
-                if (target.value.GetComponent<Health>() != null)
+            {
+                if (nma.gameObject.tag == "Melee")
+                {
+
+                }
+                else if(nma.gameObject.tag == "Tank")
                 {
                     int n = Random.Range(0, 2);
+                    switch (n)
+                    {
+                        case 0:
+                            FMODUnity.RuntimeManager.PlayOneShot("{ee8817b1-3eb7-4906-95a6-8bbbe77e02be}", nma.gameObject.transform.position);
+                            break;
+                        case 1:
+                            FMODUnity.RuntimeManager.PlayOneShot("{5642b734-e6c3-40fb-b8a0-4d5d7f80b873}", nma.gameObject.transform.position);
+                            break;
+                    }        
+                    
+                }
+                else if(nma.gameObject.tag == "Ranger")
+                {
+
+                }
+                if (target.value.GetComponent<Health>() != null)
+                {
+                    int n = Random.Range(0, 3);
                     switch (n)
                     {
                         case 0:
@@ -63,7 +86,7 @@ namespace NodeCanvas.Tasks.Actions {
                 }
                 else if (target.value.GetComponent<HealerHealth>() != null)
                 {
-                    int n = Random.Range(0, 2);
+                    int n = Random.Range(0, 3);
                     switch (n)
                     {
                         case 0:
@@ -76,11 +99,13 @@ namespace NodeCanvas.Tasks.Actions {
                             FMODUnity.RuntimeManager.PlayOneShot("{a682ce77-7868-42b8-a2cc-5fc57224d4b9}", target.value.transform.position);
                             break;
                     }
+                    FMODUnity.RuntimeManager.PlayOneShot("{d49c0aa9-1f23-4fa1-b231-dc6a4a6d3bde}");
                     target.value.GetComponent<HealerHealth>().health -= damage;
                 }             
                 atkDur.value = totalAtkTime;
                 //EndAction(true);
             }
+            
 
             EndAction(true);
         }

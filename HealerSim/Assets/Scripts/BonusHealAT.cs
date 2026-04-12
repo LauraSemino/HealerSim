@@ -23,9 +23,10 @@ namespace NodeCanvas.Tasks.Actions {
 		protected override void OnExecute() {
 			if (cooldown.value <= 0)
 			{
+                FMODUnity.RuntimeManager.PlayOneShot("{a6955195-f078-4fde-b4c8-d4f59b897270}");
                 activeTime.value = 6;
             }
-            FMODUnity.RuntimeManager.PlayOneShot("{a6955195-f078-4fde-b4c8-d4f59b897270}");
+           
             //EndAction(true);
         }
 
