@@ -71,7 +71,7 @@ public class Health : MonoBehaviour
         }
         else if (gameObject.tag == "Ranger")
         {
-
+            FMODUnity.RuntimeManager.PlayOneShot("{b5440849-3dd6-4946-b026-52143b436c80}", gameObject.transform.position);
         }
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
