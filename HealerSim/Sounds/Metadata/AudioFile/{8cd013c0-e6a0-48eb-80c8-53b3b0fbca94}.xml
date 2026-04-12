@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{8cd013c0-e6a0-48eb-80c8-53b3b0fbca94}">
+		<property name="assetPath">
+			<value>Tank-Simran-1-Dies.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>24.111020408163267</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7ad89f6f-1528-4398-8577-3443237ebe16}</destination>
+		</relationship>
+	</object>
+</objects>

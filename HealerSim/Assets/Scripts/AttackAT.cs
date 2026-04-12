@@ -47,7 +47,16 @@ namespace NodeCanvas.Tasks.Actions {
             {
                 if (nma.gameObject.tag == "Melee")
                 {
-
+                    int n = Random.Range(0, 2);
+                    switch (n)
+                    {
+                        case 0:
+                            FMODUnity.RuntimeManager.PlayOneShot("{362938c9-a04f-40c7-b37f-24a703b90ea3}", nma.gameObject.transform.position);
+                            break;
+                        case 1:
+                            FMODUnity.RuntimeManager.PlayOneShot("{ba2ee146-8188-48b6-8182-cf0b197d13fd}", nma.gameObject.transform.position);
+                            break;
+                    }
                 }
                 else if(nma.gameObject.tag == "Tank")
                 {
@@ -65,7 +74,16 @@ namespace NodeCanvas.Tasks.Actions {
                 }
                 else if(nma.gameObject.tag == "Ranger")
                 {
-
+                    int n = Random.Range(0, 2);
+                    switch (n)
+                    {
+                        case 0:
+                            FMODUnity.RuntimeManager.PlayOneShot("{5927c55f-ef49-48ff-b521-a103b5ebaa9e}", nma.gameObject.transform.position);
+                            break;
+                        case 1:
+                            FMODUnity.RuntimeManager.PlayOneShot("{f607924c-6a54-4f0a-94fd-38b01b200749}", nma.gameObject.transform.position);
+                            break;
+                    }
                 }
                 if (target.value.GetComponent<Health>() != null)
                 {
@@ -83,6 +101,19 @@ namespace NodeCanvas.Tasks.Actions {
                             break;
                     }
                     target.value.GetComponent<Health>().health -= damage;
+
+                    if (target.value.tag == "Melee")
+                    {
+                        FMODUnity.RuntimeManager.PlayOneShot("{21560600-e255-41d9-9c38-d2de52c46fd7}", target.value.transform.position);
+                    }
+                    else if (target.value.tag == "Tank")
+                    {
+                        FMODUnity.RuntimeManager.PlayOneShot("{43dcf24e-8b1b-4a79-b5b2-37f5892eef2f}", target.value.transform.position);
+                    }
+                    else if (target.value.tag == "Ranger")
+                    {
+                        FMODUnity.RuntimeManager.PlayOneShot("{db27d37f-f326-4a29-b496-3c40453f3d0b}", target.value.transform.position);
+                    }
                 }
                 else if (target.value.GetComponent<HealerHealth>() != null)
                 {

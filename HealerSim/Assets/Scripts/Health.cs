@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.GraphicsBuffer;
 
 public class Health : MonoBehaviour
 {
@@ -60,7 +61,18 @@ public class Health : MonoBehaviour
     }
     IEnumerator Die()
     {
-        
+        if (gameObject.tag == "Tank")
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("{ 599f3e81 - 1807 - 4225 - 8d63 - 2517f11960c5}", gameObject.transform.position);          
+        }
+        else if (gameObject.tag == "Melee")
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("{af1625d1-4a56-486c-928f-98f6ed27024f}", gameObject.transform.position);
+        }
+        else if (gameObject.tag == "Ranger")
+        {
+
+        }
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }

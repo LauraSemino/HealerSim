@@ -69,10 +69,10 @@ MonoBehaviour:
   Path: Sounds/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639116132548261537
+  lastModified: 639116154746871822
   FileSizes:
   - Name: Desktop
-    Value: 1878
+    Value: 2324
   Exists: 1
 --- !u!114 &-6762833673409451124
 MonoBehaviour:
@@ -152,6 +152,60 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-5375919047395459205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Melee/Melee Dies
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Melee/Melee Dies
+  Guid:
+    Data1: -1357503023
+    Data2: 1215056470
+    Data3: -157773934
+    Data4: 1325541357
+  Banks:
+  - {fileID: 4452583481213598673}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
+--- !u!114 &-5358895813011680427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tank/Tank Hurt
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Tank/Tank Hurt
+  Guid:
+    Data1: 1138553422
+    Data2: 1249479451
+    Data3: -180899147
+    Data4: 804204169
+  Banks:
+  - {fileID: 4452583481213598673}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 800
 --- !u!114 &-5053978009278700081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,6 +226,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1136992
   Exists: 1
+--- !u!114 &-4342991243921765535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ranger/Ranger Hurt
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Ranger/Ranger Hurt
+  Guid:
+    Data1: -618146945
+    Data2: 1244263206
+    Data3: 1077712564
+    Data4: 188563269
+  Banks:
+  - {fileID: 4452583481213598673}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 600
 --- !u!114 &-3734814086464958863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,6 +334,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 50
+--- !u!114 &-2027425573774389480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tank/Tank Dies
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Tank/Tank Dies
+  Guid:
+    Data1: 1503608449
+    Data2: 1109727239
+    Data3: 388326285
+    Data4: -983557647
+  Banks:
+  - {fileID: 4452583481213598673}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1500
 --- !u!114 &-1773432580278339542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,6 +385,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-1704567327316375588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Melee/Melee Hurt
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Melee/Melee Hurt
+  Guid:
+    Data1: 559285760
+    Data2: 1104798293
+    Data3: -556648292
+    Data4: -680541102
+  Banks:
+  - {fileID: 4452583481213598673}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 800
 --- !u!114 &-1640831352097493728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,6 +460,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-1168355758020477993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ranger/Ranger Dies
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Ranger/Ranger Dies
+  Guid:
+    Data1: -1253832631
+    Data2: 1229340118
+    Data3: 340928176
+    Data4: -2140388549
+  Banks:
+  - {fileID: 4452583481213598673}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 800
 --- !u!114 &-1063773660865557185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,13 +556,23 @@ MonoBehaviour:
   - {fileID: 5194099883305186851}
   - {fileID: 7839849169065574153}
   - {fileID: 97050248373137571}
+  - {fileID: -5358895813011680427}
+  - {fileID: -2027425573774389480}
+  - {fileID: -1704567327316375588}
+  - {fileID: 3362483471589920662}
+  - {fileID: 3936475634069187463}
+  - {fileID: -5375919047395459205}
+  - {fileID: -1168355758020477993}
+  - {fileID: 6050314608564484779}
+  - {fileID: 4729239587038533128}
+  - {fileID: -4342991243921765535}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4452583481213598673}
   StringsBanks:
   - {fileID: -7006591094534774432}
   cacheVersion: 131848
-  cacheTime: 639116132548261537
+  cacheTime: 639116154746871822
   SerializableEventsDict:
   - key: event:/UI Click
     index: 0
@@ -452,6 +624,26 @@ MonoBehaviour:
     index: 23
   - key: event:/Tank/Tank Attack
     index: 24
+  - key: event:/Tank/Tank Hurt
+    index: 25
+  - key: event:/Tank/Tank Dies
+    index: 26
+  - key: event:/Melee/Melee Hurt
+    index: 27
+  - key: event:/Melee/Melee Attack 2
+    index: 28
+  - key: event:/Melee/Melee Attack
+    index: 29
+  - key: event:/Melee/Melee Dies
+    index: 30
+  - key: event:/Ranger/Ranger Dies
+    index: 31
+  - key: event:/Ranger/Ranger Attack 2
+    index: 32
+  - key: event:/Ranger/Ranger Attack
+    index: 33
+  - key: event:/Ranger/Ranger Hurt
+    index: 34
 --- !u!114 &97050248373137571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -641,6 +833,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2000
+--- !u!114 &3362483471589920662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Melee/Melee Attack 2
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Melee/Melee Attack 2
+  Guid:
+    Data1: -1171332794
+    Data2: 1219920264
+    Data3: 198148737
+    Data4: -49054439
+  Banks:
+  - {fileID: 4452583481213598673}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 600
+--- !u!114 &3936475634069187463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Melee/Melee Attack
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Melee/Melee Attack
+  Guid:
+    Data1: 908671177
+    Data2: 1086824527
+    Data3: -1490780237
+    Data4: -1559316221
+  Banks:
+  - {fileID: 4452583481213598673}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
 --- !u!114 &4452583481213598673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -656,11 +902,38 @@ MonoBehaviour:
   Path: Sounds/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639116132548226325
+  lastModified: 639116154746831519
   FileSizes:
   - Name: Desktop
-    Value: 3051584
+    Value: 4122624
   Exists: 1
+--- !u!114 &4729239587038533128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ranger/Ranger Attack
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Ranger/Ranger Attack
+  Guid:
+    Data1: 1495778655
+    Data2: 1224732489
+    Data3: 60891573
+    Data4: -1632965707
+  Banks:
+  - {fileID: 4452583481213598673}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 421
 --- !u!114 &5194099883305186851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -771,6 +1044,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1233
+--- !u!114 &6050314608564484779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ranger/Ranger Attack 2
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Ranger/Ranger Attack 2
+  Guid:
+    Data1: -167275956
+    Data2: 1326082644
+    Data3: -1338442348
+    Data4: 1225203739
+  Banks:
+  - {fileID: 4452583481213598673}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 700
 --- !u!114 &6212211485903293456
 MonoBehaviour:
   m_ObjectHideFlags: 0
