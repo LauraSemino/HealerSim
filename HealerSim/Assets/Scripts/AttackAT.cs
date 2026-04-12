@@ -55,10 +55,10 @@ namespace NodeCanvas.Tasks.Actions {
                     switch (n)
                     {
                         case 0:
-                            FMODUnity.RuntimeManager.PlayOneShot("{ee8817b1-3eb7-4906-95a6-8bbbe77e02be}", nma.gameObject.transform.position);
+                            FMODUnity.RuntimeManager.PlayOneShot("{23439c26-f3ef-441e-9ff8-a56f317283ac}", nma.gameObject.transform.position);
                             break;
                         case 1:
-                            FMODUnity.RuntimeManager.PlayOneShot("{5642b734-e6c3-40fb-b8a0-4d5d7f80b873}", nma.gameObject.transform.position);
+                            FMODUnity.RuntimeManager.PlayOneShot("{942f8cbb-2479-4148-8544-e652b1891c13}", nma.gameObject.transform.position);
                             break;
                     }        
                     

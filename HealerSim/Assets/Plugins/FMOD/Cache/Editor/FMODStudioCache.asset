@@ -69,7 +69,7 @@ MonoBehaviour:
   Path: Sounds/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639116121471044578
+  lastModified: 639116132548261537
   FileSizes:
   - Name: Desktop
     Value: 1878
@@ -128,6 +128,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 920
+--- !u!114 &-6042461070032855449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Healer Basic/PitchVariance
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: PitchVariance
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1117249947
+    data2: 2906913020
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-5053978009278700081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,7 +400,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -7006591094534774432}
   cacheVersion: 131848
-  cacheTime: 639116121471044578
+  cacheTime: 639116132548261537
   SerializableEventsDict:
   - key: event:/UI Click
     index: 0
@@ -424,6 +448,10 @@ MonoBehaviour:
     index: 21
   - key: event:/Healer/Healer Hit
     index: 22
+  - key: event:/Tank/Tank Attack 2
+    index: 23
+  - key: event:/Tank/Tank Attack
+    index: 24
 --- !u!114 &97050248373137571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -438,14 +466,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
   Path: event:/Tank/Tank Attack
   Guid:
-    Data1: -293070927
-    Data2: 1225146039
-    Data3: -1148475755
-    Data4: -1107132697
+    Data1: 591633446
+    Data2: 1142879215
+    Data3: 1873148063
+    Data4: -1400671695
   Banks:
   - {fileID: 4452583481213598673}
   IsStream: 1
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -628,10 +656,10 @@ MonoBehaviour:
   Path: Sounds/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639116121471004259
+  lastModified: 639116132548226325
   FileSizes:
   - Name: Desktop
-    Value: 3050656
+    Value: 3051584
   Exists: 1
 --- !u!114 &5194099883305186851
 MonoBehaviour:
@@ -738,7 +766,8 @@ MonoBehaviour:
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
-  Parameters: []
+  Parameters:
+  - {fileID: -6042461070032855449}
   MinDistance: 1
   MaxDistance: 20
   Length: 1233
@@ -811,14 +840,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
   Path: event:/Tank/Tank Attack 2
   Guid:
-    Data1: 1447212852
-    Data2: 1090250435
-    Data3: 1565368504
-    Data4: 1941471359
+    Data1: -1808823109
+    Data2: 1095246969
+    Data3: 1390822533
+    Data4: 320637361
   Banks:
   - {fileID: 4452583481213598673}
   IsStream: 1
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
