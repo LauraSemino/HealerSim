@@ -47,6 +47,7 @@ namespace NodeCanvas.Tasks.Actions {
             {
                 if (nma.gameObject.tag == "Melee")
                 {
+                    target.value.GetComponent<Rigidbody>().AddForce((target.value.transform.position - nma.gameObject.transform.position).normalized * 7, ForceMode.Impulse);
                     int n = Random.Range(0, 2);
                     switch (n)
                     {
@@ -60,6 +61,7 @@ namespace NodeCanvas.Tasks.Actions {
                 }
                 else if(nma.gameObject.tag == "Tank")
                 {
+                    target.value.GetComponent<Rigidbody>().AddForce((target.value.transform.position - nma.gameObject.transform.position).normalized * 8, ForceMode.Impulse);
                     int n = Random.Range(0, 2);
                     switch (n)
                     {
@@ -74,6 +76,7 @@ namespace NodeCanvas.Tasks.Actions {
                 }
                 else if(nma.gameObject.tag == "Ranger")
                 {
+                    target.value.GetComponent<Rigidbody>().AddForce((target.value.transform.position - nma.gameObject.transform.position).normalized * 2, ForceMode.Impulse);
                     int n = Random.Range(0, 2);
                     switch (n)
                     {
@@ -82,6 +85,20 @@ namespace NodeCanvas.Tasks.Actions {
                             break;
                         case 1:
                             FMODUnity.RuntimeManager.PlayOneShot("{f607924c-6a54-4f0a-94fd-38b01b200749}", nma.gameObject.transform.position);
+                            break;
+                    }
+                }
+                else if (nma.gameObject.tag == "Rogue")
+                {
+                    target.value.GetComponent<Rigidbody>().AddForce((target.value.transform.position - nma.gameObject.transform.position).normalized * 3, ForceMode.Impulse);
+                    int n = Random.Range(0, 2);
+                    switch (n)
+                    {
+                        case 0:
+                           // FMODUnity.RuntimeManager.PlayOneShot("{5927c55f-ef49-48ff-b521-a103b5ebaa9e}", nma.gameObject.transform.position);
+                            break;
+                        case 1:
+                           // FMODUnity.RuntimeManager.PlayOneShot("{f607924c-6a54-4f0a-94fd-38b01b200749}", nma.gameObject.transform.position);
                             break;
                     }
                 }
@@ -101,17 +118,17 @@ namespace NodeCanvas.Tasks.Actions {
                             break;
                     }
                     target.value.GetComponent<Health>().health -= damage;
-
+                    
                     if (target.value.tag == "Melee")
-                    {
+                    {                   
                         FMODUnity.RuntimeManager.PlayOneShot("{21560600-e255-41d9-9c38-d2de52c46fd7}", target.value.transform.position);
                     }
                     else if (target.value.tag == "Tank")
-                    {
+                    {                       
                         FMODUnity.RuntimeManager.PlayOneShot("{43dcf24e-8b1b-4a79-b5b2-37f5892eef2f}", target.value.transform.position);
                     }
                     else if (target.value.tag == "Ranger")
-                    {
+                    {                     
                         FMODUnity.RuntimeManager.PlayOneShot("{db27d37f-f326-4a29-b496-3c40453f3d0b}", target.value.transform.position);
                     }
                 }

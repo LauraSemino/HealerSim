@@ -267,9 +267,9 @@ public class RoundManager : MonoBehaviour
             case 12:
                 //debug round
 
-                enemies.Add(Instantiate(unitPrefabs[6]));
-                enemies[0].GetComponent<Health>().maxHealth = 4;
-                enemies[0].transform.position = eSpawns[3].position;
+                enemies.Add(Instantiate(unitPrefabs[0]));
+                enemies[0].GetComponent<Health>().maxHealth = 5;
+                enemies[0].transform.position = eSpawns[0].position;
              /* friends.Add(Instantiate(unitPrefabs[7]));
                 friends[1].GetComponent<Health>().maxHealth = 4;
                 friends[1].transform.position = fSpawns[1].position;

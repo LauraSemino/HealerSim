@@ -23,6 +23,7 @@ namespace NodeCanvas.Tasks.Actions {
 			nma.isStopped = true;
 			nma.enabled = false;
 			//agent.GetComponent<Collider>().enabled = false;
+			rb.constraints = RigidbodyConstraints.None;
 			rb.AddForce(new Vector3(Random.Range(-10,10), Random.Range(-10, 10), Random.Range(-10, 10)), ForceMode.Impulse);
 			//agent.gameObject.transform.rotation = Quaternion.Euler(90, 0, 0);
             //EndAction(true);
