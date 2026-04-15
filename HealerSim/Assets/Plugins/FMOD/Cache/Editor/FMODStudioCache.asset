@@ -69,7 +69,7 @@ MonoBehaviour:
   Path: Sounds/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639116154746871822
+  lastModified: 639118589949316701
   FileSizes:
   - Name: Desktop
     Value: 2324
@@ -221,7 +221,7 @@ MonoBehaviour:
   Path: Sounds/Build/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 639116097027457220
+  lastModified: 639118589949355123
   FileSizes:
   - Name: Desktop
     Value: 1136992
@@ -572,7 +572,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -7006591094534774432}
   cacheVersion: 131848
-  cacheTime: 639116154746871822
+  cacheTime: 639118589949355123
   SerializableEventsDict:
   - key: event:/UI Click
     index: 0
@@ -902,7 +902,7 @@ MonoBehaviour:
   Path: Sounds/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639116154746831519
+  lastModified: 639118589949289456
   FileSizes:
   - Name: Desktop
     Value: 4122624

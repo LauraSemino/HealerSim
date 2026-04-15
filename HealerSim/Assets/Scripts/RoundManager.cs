@@ -31,8 +31,8 @@ public class RoundManager : MonoBehaviour
          */
         if (roundCount >= 11)
         {
-           SceneManager.LoadScene("Victory", LoadSceneMode.Single);
-           SceneManager.UnloadSceneAsync("Main");
+         //  SceneManager.LoadScene("Victory", LoadSceneMode.Single);
+         //  SceneManager.UnloadSceneAsync("Main");
         }
 
         List<GameObject> deadGuys = new List<GameObject>();
@@ -266,12 +266,16 @@ public class RoundManager : MonoBehaviour
                 break;
             case 12:
                 //debug round
+
                 enemies.Add(Instantiate(unitPrefabs[6]));
                 enemies[0].GetComponent<Health>().maxHealth = 4;
-                enemies[0].transform.position = eSpawns[0].position;
-                //friends.Add(Instantiate(unitPrefabs[7]));
-               // friends[1].GetComponent<Health>().maxHealth = 4;
-               // friends[1].transform.position = fSpawns[1].position;
+                enemies[0].transform.position = eSpawns[3].position;
+             /* friends.Add(Instantiate(unitPrefabs[7]));
+                friends[1].GetComponent<Health>().maxHealth = 4;
+                friends[1].transform.position = fSpawns[1].position;
+                enemies.Add(Instantiate(unitPrefabs[1]));
+                enemies[1].GetComponent<Health>().maxHealth = 10;
+                enemies[1].transform.position = eSpawns[4].position; */
                 break;
         }
             
