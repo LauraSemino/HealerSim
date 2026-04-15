@@ -22,6 +22,7 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         //healthDisplay.transform.LookAt(Camera.main.transform);
         //healthBackground.transform.LookAt(Camera.main.transform);
         float healthRatio;
