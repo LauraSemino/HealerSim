@@ -12,11 +12,11 @@ public class Health : MonoBehaviour
     public GameObject healthDisplay;
     // public GameObject healthBackground;
     //  public GameObject camera
-    public bool dying;
+    //public bool dying;
     void Start()
     {
         health = maxHealth;
-        dying = false;
+        //dying = false;
     }
 
     // Update is called once per frame
@@ -47,32 +47,16 @@ public class Health : MonoBehaviour
             }
             
             if (health <= 0)
-            {
-                dying = true;
+            {                
                 StartCoroutine(Die());
+               
             }
-            if(dying == true)
-            {
-                health = 0;
-            }
-        }
-        
-      
+        }    
     }
     IEnumerator Die()
     {
-        if (gameObject.tag == "Tank")
-        {
-            FMODUnity.RuntimeManager.PlayOneShot("{ 599f3e81 - 1807 - 4225 - 8d63 - 2517f11960c5}", gameObject.transform.position);          
-        }
-        else if (gameObject.tag == "Melee")
-        {
-            FMODUnity.RuntimeManager.PlayOneShot("{af1625d1-4a56-486c-928f-98f6ed27024f}", gameObject.transform.position);
-        }
-        else if (gameObject.tag == "Ranger")
-        {
-            FMODUnity.RuntimeManager.PlayOneShot("{b5440849-3dd6-4946-b026-52143b436c80}", gameObject.transform.position);
-        }
+        //dying = false;
+        
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }

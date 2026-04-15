@@ -22,8 +22,20 @@ namespace NodeCanvas.Tasks.Actions {
 		protected override void OnExecute() {
 			nma.isStopped = true;
 			nma.enabled = false;
-			//agent.GetComponent<Collider>().enabled = false;
-			rb.constraints = RigidbodyConstraints.None;
+            //agent.GetComponent<Collider>().enabled = false;
+            if (nma.gameObject.tag == "Tank")
+            {
+                FMODUnity.RuntimeManager.PlayOneShot("{ 599f3e81 - 1807 - 4225 - 8d63 - 2517f11960c5}", nma.gameObject.transform.position);
+            }
+            else if (nma.gameObject.tag == "Melee")
+            {
+                FMODUnity.RuntimeManager.PlayOneShot("{af1625d1-4a56-486c-928f-98f6ed27024f}", nma.gameObject.transform.position);
+            }
+            else if (nma.gameObject.tag == "Ranger")
+            {
+                FMODUnity.RuntimeManager.PlayOneShot("{b5440849-3dd6-4946-b026-52143b436c80}", nma.gameObject.transform.position);
+            }
+            rb.constraints = RigidbodyConstraints.None;
 			rb.AddForce(new Vector3(Random.Range(-10,10), Random.Range(-10, 10), Random.Range(-10, 10)), ForceMode.Impulse);
 			//agent.gameObject.transform.rotation = Quaternion.Euler(90, 0, 0);
             //EndAction(true);

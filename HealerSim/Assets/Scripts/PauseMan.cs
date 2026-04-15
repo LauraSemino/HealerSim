@@ -49,7 +49,7 @@ public class PauseMan : MonoBehaviour
         }
 
        
-
+        
     }
     void PauseClick()
     {

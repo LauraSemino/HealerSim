@@ -390,7 +390,7 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: Sounds/Sounds.fspro
+  sourceProjectPath: Sounds/HealerSimFMOD.fspro
   sourceBankPath: Sounds/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5

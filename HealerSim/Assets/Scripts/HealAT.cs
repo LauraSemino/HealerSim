@@ -34,7 +34,7 @@ namespace NodeCanvas.Tasks.Actions {
 			{
 				if(target.value.GetComponent<Health>().health < target.value.GetComponent<Health>().maxHealth)
 				{
-					if(target.value.GetComponent<Health>().dying == false)
+					if(target.value.GetComponent<Health>().health > 0)
 					{
                         target.value.GetComponent<Health>().health += healVal * bonusHeal.value;
                         cooldown.value = fireRate;
@@ -70,10 +70,7 @@ namespace NodeCanvas.Tasks.Actions {
 					cooldown.value = fireRate;
 					
 				}
-
             }
-
-
             EndAction(true);
 		}
 

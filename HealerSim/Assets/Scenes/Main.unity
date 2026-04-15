@@ -8503,7 +8503,6 @@ MonoBehaviour:
   health: 0
   maxHealth: 5
   healthDisplay: {fileID: 2844180868669004380}
-  dying: 0
 --- !u!54 &7634381153293136870
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8568,8 +8567,8 @@ MonoBehaviour:
     _version: 3.31
     _category: 
     _comments: 
-    _translation: {x: 133.62448, y: 157.72058}
-    _zoomFactor: 0.5597935
+    _translation: {x: 130.52885, y: 181.32733}
+    _zoomFactor: 0.58355606
   _firstActivation: 0
   _enableAction: 0
   _disableAction: 0
